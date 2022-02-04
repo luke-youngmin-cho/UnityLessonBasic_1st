@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  destroyEffect: {fileID: 6319466802994812328, guid: b3c7d608fc57ddc4ea286eb37c65856b, type: 3}
+  AIPercent: 30
 --- !u!65 &-2214468844857462232
 BoxCollider:
   m_ObjectHideFlags: 0
