@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class DestroyBoarder : MonoBehaviour
 {    
+    // OnCollision Event  는 
+    // Rigidbody 와 Collider 또는
+    // Collider 와 RigidBody 가 충돌할 떄 호출되는 이벤틀함수.
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider == null) return;
+        if (collision.gameObject == null) return;
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Destroy(collision.gameObject);
-        }
-
+        Destroy(collision.gameObject);
     }
 }
