@@ -1,9 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
+    private float _HP; 
+    public float HP
+    {
+        set
+        {
+            _HP = value;
+            int HPint = (int)_HP;
+            HPSlider.value = _HP / HPMax;
+            if(_HP <= 0)
+            {
+                DestroyByPlayerWeapon();
+            }
+        }
+        get
+        {
+            return _HP;
+        }
+    }
+    [SerializeField] float HPInit;
+    [SerializeField] float HPMax;
+    [SerializeField] Slider HPSlider;
+
     [SerializeField] private float score;
     [SerializeField] private float damage;
     [SerializeField] private float speed;
@@ -18,6 +40,7 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
+        HP = HPInit;
         SetTarget_RandomlyToPlayer(AIPercent);
     }
     private void Update()
@@ -63,16 +86,15 @@ public class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if(collision.gameObject.layer == LayerMask.NameToLayer("PlayerWeapon"))
-        {
-            GameObject effectGO = Instantiate(destroyEffect);
-            effectGO.transform.position = tr.position;
+    }
+    public void DestroyByPlayerWeapon()
+    {
+        GameObject effectGO = Instantiate(destroyEffect);
+        effectGO.transform.position = tr.position;
 
-            GameObject playerGO = GameObject.Find("Player");
-            playerGO.GetComponent<Player>().score += score;
+        GameObject playerGO = GameObject.Find("Player");
+        playerGO.GetComponent<Player>().score += score;
 
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
+        Destroy(this.gameObject);
     }
 }

@@ -741,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1453238045873927070, guid: 84f72573d7cac0346a90c8a6c8d9a151, type: 3}
+  bomb: {fileID: 1453238045873927070, guid: aad59f7663ee6e341b92c1acd6aae633, type: 3}
   firePoint: {fileID: 1184822799}
 --- !u!114 &678319331
 MonoBehaviour:

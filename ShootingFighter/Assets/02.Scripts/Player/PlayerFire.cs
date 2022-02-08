@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bomb;
     [SerializeField] private Transform firePoint;
     private void Update()
     {
@@ -21,6 +22,11 @@ public class PlayerFire : MonoBehaviour
             // 클래스타입 변수이름 = new 클래스생성자
             tmpBullet.transform.position = firePoint.position;
             tmpBullet.transform.rotation = firePoint.rotation;*/
+        }
+        if (Input.GetKeyDown("b"))
+        {
+            Instantiate(bomb, firePoint);
+            firePoint.DetachChildren();
         }
     }
 }
