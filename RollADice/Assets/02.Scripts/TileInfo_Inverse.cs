@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class TileInfo_Inverse : TileInfo
 {
-    
+    public override void TileEvent()
+    {
+        base.TileEvent();
+        DicePlayUI.instance.SwitchDicePanel();
+    }
 }

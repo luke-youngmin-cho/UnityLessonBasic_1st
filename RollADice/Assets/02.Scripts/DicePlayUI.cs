@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DicePlayUI : MonoBehaviour
 {
+    static public DicePlayUI instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     public GameObject normalDicePanel;
     public GameObject inverseDicePanel;
 

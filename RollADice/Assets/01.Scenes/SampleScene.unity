@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9528302, g: 0.94928294, b: 0.12284911, a: 1}
+  m_Color: {r: 0.23584908, g: 0.23577212, b: 0.21953247, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -982,6 +982,7 @@ MonoBehaviour:
   diceValueText: {fileID: 721172024}
   diceNumText: {fileID: 681634369}
   goldenDiceNumText: {fileID: 349199082}
+  starScoreText: {fileID: 533602463}
 --- !u!4 &184435875
 Transform:
   m_ObjectHideFlags: 0
@@ -1844,7 +1845,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1858,6 +1859,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2234,8 +2247,9 @@ GameObject:
   - component: {fileID: 614789651}
   - component: {fileID: 614789650}
   - component: {fileID: 614789649}
+  - component: {fileID: 614789653}
   m_Layer: 5
-  m_Name: DiceGameCanvas
+  m_Name: DicePlayUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2329,6 +2343,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &614789653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614789648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc91e72f609fff40aac62fce6a4e936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalDicePanel: {fileID: 1086928180}
+  inverseDicePanel: {fileID: 748068172}
 --- !u!1 &634886471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2997,7 +3025,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3011,6 +3039,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3067,7 +3107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 748068173}
   m_Layer: 5
-  m_Name: DiceButtonsInverse
+  m_Name: InverseDicePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3182,7 +3222,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3196,6 +3236,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3417,7 +3469,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollADice
+        m_MethodName: RollADiceInverse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5004,7 +5068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1086928181}
   m_Layer: 5
-  m_Name: DiceButtons
+  m_Name: NormalDicePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5119,7 +5183,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5133,6 +5197,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5585,7 +5661,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1331552079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eac934f647c146d42b5568259401ae41, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cd2f81e4550bce4f9e4bfac0a1b6fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   index: 13
@@ -8302,7 +8378,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8316,6 +8392,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8667,7 +8755,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 184435874}
         m_TargetAssemblyTypeName: DicePlayManager, Assembly-CSharp
-        m_MethodName: RollAGoldenDice
+        m_MethodName: RollAGoldenDiceInverse
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8681,6 +8769,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 614789653}
+        m_TargetAssemblyTypeName: DicePlayUI, Assembly-CSharp
+        m_MethodName: SwitchDicePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
