@@ -54,6 +54,9 @@ public class DicePlayManager : MonoBehaviour
         }
     }
     public Text starScoreText;
+
+    public Transform playerStartPoint;
+    public GameObject finishedPanel;
     private void Awake()
     {
         instance = this;
@@ -107,6 +110,8 @@ public class DicePlayManager : MonoBehaviour
         
         Player.instance.Move(target);
         list_MapTile[currentTileIndex].GetComponent<TileInfo>().TileEvent();
+
+        CheckGameIsFinished();
     }
     private void CheckPlayerPassedStarTile(int previousIndex, int currentIndex)
     {
@@ -128,5 +133,37 @@ public class DicePlayManager : MonoBehaviour
     {   
         Vector3 pos = list_MapTile[tileIndex].position;
         return pos;
+    }
+    private void CheckGameIsFinished()
+    {
+        int totalDiceNum = diceNum + goldenDiceNum;
+        if(totalDiceNum < 1)
+        {
+            // Finished Panel 활성화
+            finishedPanel.SetActive(true);
+        }
+    }
+    public void ReplayGame()
+    {
+        // 주사위갯수 초기화
+        diceNum = diceNumInit;
+        goldenDiceNum = goldenDiceNumInit;
+        // 샛별칸 값 초기화
+        foreach (Transform maptile in list_MapTile)
+        {
+            TileInfo_Star tileInfo_Star = null;
+            bool isExist = maptile.TryGetComponent(out tileInfo_Star);
+            if (isExist)
+            {
+                tileInfo_Star.starValue = 3;
+            }
+        }
+        // 플레이어 원위치
+        Player.instance.transform.position = playerStartPoint.position;
+        currentTileIndex = 0;
+        // 점수 초기화
+        starScore = 0;
+        // 주사위패널 초기화
+        DicePlayUI.instance.RollBackDicePanel();
     }
 }

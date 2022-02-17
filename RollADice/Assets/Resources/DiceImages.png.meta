@@ -1,97 +1,97 @@
 fileFormatVersion: 2
-guid: 600d53fe58c46ad47b5738b4375c6846
+guid: ab8249c523046aa4fa07aa814f51962d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 137436364316955303
-    second: DiceVector_0
+      213: 3498788393226457341
+    second: DiceVectorDark_0
   - first:
-      213: 7484023807835804777
-    second: DiceVector_1
+      213: -578994215995311711
+    second: DiceVectorDark_1
   - first:
-      213: -3184232062180379068
-    second: DiceVector_2
+      213: 7687206250948740883
+    second: DiceVectorDark_2
   - first:
-      213: 830025097780125285
-    second: DiceVector_3
+      213: -6174742323907284163
+    second: DiceVectorDark_3
   - first:
-      213: 4091772033256350338
-    second: DiceVector_4
+      213: 7800789161884929343
+    second: DiceVectorDark_4
   - first:
-      213: 8799890942897793491
-    second: DiceVector_5
+      213: -3065921620584905544
+    second: DiceVectorDark_5
   - first:
-      213: -8127389888232769329
-    second: DiceVector_6
+      213: 8245491329719856151
+    second: DiceVectorDark_6
   - first:
-      213: 7022935700554621067
-    second: DiceVector_7
+      213: -2464703294639550713
+    second: DiceVectorDark_7
   - first:
-      213: 3141144630927180855
-    second: DiceVector_8
+      213: -3725835632314098490
+    second: DiceVectorDark_8
   - first:
-      213: -2114212980558120239
-    second: DiceVector_9
+      213: 5878698190348227581
+    second: DiceVectorDark_9
   - first:
-      213: 2643137856205523779
-    second: DiceVector_10
+      213: -7740886409881312569
+    second: DiceVectorDark_10
   - first:
-      213: 4329396382151139799
-    second: DiceVector_11
+      213: 6019620816631276956
+    second: DiceVectorDark_11
   - first:
-      213: 1879414421774833401
-    second: DiceVector_12
+      213: -627007623076817387
+    second: DiceVectorDark_12
   - first:
-      213: -3085764956366841813
-    second: DiceVector_13
+      213: 1587113927528458321
+    second: DiceVectorDark_13
   - first:
-      213: -7031054824456314081
-    second: DiceVector_14
+      213: -5773649572820528650
+    second: DiceVectorDark_14
   - first:
-      213: 1598389772763739966
-    second: DiceVector_15
+      213: -6618884029792293524
+    second: DiceVectorDark_15
   - first:
-      213: -3145958169113332693
-    second: DiceVector_16
+      213: -4939315547473689840
+    second: DiceVectorDark_16
   - first:
-      213: -8734980539264289767
-    second: DiceVector_17
+      213: -2555117708766305175
+    second: DiceVectorDark_17
   - first:
-      213: -8363175113640464168
-    second: DiceVector_18
+      213: 5477101162041347680
+    second: DiceVectorDark_18
   - first:
-      213: 7956888545392150571
-    second: DiceVector_19
+      213: 9189249248095551726
+    second: DiceVectorDark_19
   - first:
-      213: 2643997270226278518
-    second: DiceVector_20
+      213: 6363747717717890125
+    second: DiceVectorDark_20
   - first:
-      213: 858455169116302241
-    second: DiceVector_21
+      213: -7124373296041738971
+    second: DiceVectorDark_21
   - first:
-      213: -2925575339833045069
-    second: DiceVector_22
+      213: -1650192377673860164
+    second: DiceVectorDark_22
   - first:
-      213: 636804219153565030
-    second: DiceVector_23
+      213: -3484599100365223243
+    second: DiceVectorDark_23
   - first:
-      213: -749418622411007279
-    second: DiceVector_24
+      213: -425390176495275707
+    second: DiceVectorDark_24
   - first:
-      213: 7826274360115347017
-    second: DiceVector_25
+      213: -6075364012341062052
+    second: DiceVectorDark_25
   - first:
-      213: 7558894241609027675
-    second: DiceVector_26
+      213: 4030148251675447559
+    second: DiceVectorDark_26
   - first:
-      213: -2001579435595015635
-    second: DiceVector_27
+      213: 8124787588283891663
+    second: DiceVectorDark_27
   - first:
-      213: 9149260568383220015
-    second: DiceVector_28
+      213: -6783990251528723825
+    second: DiceVectorDark_28
   - first:
-      213: 2117681178675060524
-    second: DiceVector_29
+      213: 3086867892792436445
+    second: DiceVectorDark_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,7 +110,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -177,17 +177,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DiceVector_0
+      name: DiceVectorDark_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a2555a25a548e100800000000000000
-      internalID: 137436364316955303
+      spriteID: df0d58a91813e8030800000000000000
+      internalID: 3498788393226457341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_1
+      name: DiceVectorDark_1
       rect:
         serializedVersion: 2
-        x: 158
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        x: 166
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9649e9c40089cd760800000000000000
-      internalID: 7484023807835804777
+      spriteID: 1a9f79404dff6f7f0800000000000000
+      internalID: -578994215995311711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_2
+      name: DiceVectorDark_2
       rect:
         serializedVersion: 2
-        x: 316
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        x: 332
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 446345b6fc55fc3d0800000000000000
-      internalID: -3184232062180379068
+      spriteID: 31746fe4b517eaa60800000000000000
+      internalID: 7687206250948740883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_3
+      name: DiceVectorDark_3
       rect:
         serializedVersion: 2
-        x: 474
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        x: 498
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56ed7d3cd67d48b00800000000000000
-      internalID: 830025097780125285
+      spriteID: d33bfe35298ee4aa0800000000000000
+      internalID: -6174742323907284163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_4
+      name: DiceVectorDark_4
       rect:
         serializedVersion: 2
-        x: 632
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        x: 664
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2826f103cf4e8c830800000000000000
-      internalID: 4091772033256350338
+      spriteID: f3d4ed19968f14c60800000000000000
+      internalID: 7800789161884929343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_5
+      name: DiceVectorDark_5
       rect:
         serializedVersion: 2
-        x: 790
-        y: 638.4
-        width: 158.66667
-        height: 159.6
+        x: 830
+        y: 666.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,146 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d9a991503e7f1a70800000000000000
-      internalID: 8799890942897793491
+      spriteID: 8b4c8dfa788a375d0800000000000000
+      internalID: -3065921620584905544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc8b8c815f5b53f80800000000000000
-      internalID: -8127389888232769329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_7
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b80a7ff7fca767160800000000000000
-      internalID: 7022935700554621067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_8
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7344a8a3666979b20800000000000000
-      internalID: 3141144630927180855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_9
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1da305aee7ec8a2e0800000000000000
-      internalID: -2114212980558120239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_10
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34b848350ef4ea420800000000000000
-      internalID: 2643137856205523779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_11
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 479.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d1eaf9421b151c30800000000000000
-      internalID: 4329396382151139799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_12
+      name: DiceVectorDark_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f692a38575051a10800000000000000
-      internalID: 1879414421774833401
+      spriteID: 71ce38a8daedd6270800000000000000
+      internalID: 8245491329719856151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_13
+      name: DiceVectorDark_7
       rect:
         serializedVersion: 2
-        x: 158
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        x: 166
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,20 +354,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b28d76b0f192d25d0800000000000000
-      internalID: -3085764956366841813
+      spriteID: 70f464e796d9bcdd0800000000000000
+      internalID: -2464703294639550713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_14
+      name: DiceVectorDark_8
       rect:
         serializedVersion: 2
-        x: 316
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        x: 332
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,20 +375,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f132cf7a3ecac6e90800000000000000
-      internalID: -7031054824456314081
+      spriteID: 6ccdc649b3c2b4cc0800000000000000
+      internalID: -3725835632314098490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_15
+      name: DiceVectorDark_9
       rect:
         serializedVersion: 2
-        x: 474
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        x: 498
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,20 +396,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37333a970f9e2610800000000000000
-      internalID: 1598389772763739966
+      spriteID: df310718bd4559150800000000000000
+      internalID: 5878698190348227581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_16
+      name: DiceVectorDark_10
       rect:
         serializedVersion: 2
-        x: 632
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        x: 664
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,20 +417,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b24f2c396bf4754d0800000000000000
-      internalID: -3145958169113332693
+      spriteID: 7c2206cb2d8d29490800000000000000
+      internalID: -7740886409881312569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_17
+      name: DiceVectorDark_11
       rect:
         serializedVersion: 2
-        x: 790
-        y: 320.4
-        width: 158.66667
-        height: 159.6
+        x: 830
+        y: 500.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -552,146 +438,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 914b33dba7d17c680800000000000000
-      internalID: -8734980539264289767
+      spriteID: c95aad94d3df98350800000000000000
+      internalID: 6019620816631276956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d0b21d4b8800fb80800000000000000
-      internalID: -8363175113640464168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_19
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b28497189fb8c6e60800000000000000
-      internalID: 7956888545392150571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_20
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67890fe328d51b420800000000000000
-      internalID: 2643997270226278518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_21
-      rect:
-        serializedVersion: 2
-        x: 474
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ab66c29d68d9eb00800000000000000
-      internalID: 858455169116302241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_22
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bfcb919ab44667d0800000000000000
-      internalID: -2925575339833045069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_23
-      rect:
-        serializedVersion: 2
-        x: 790
-        y: 161.4
-        width: 158.66667
-        height: 159.6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6654e1a301266d800800000000000000
-      internalID: 636804219153565030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiceVector_24
+      name: DiceVectorDark_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,20 +459,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1da1127cbb78995f0800000000000000
-      internalID: -749418622411007279
+      spriteID: 5165b0b83eb6c47f0800000000000000
+      internalID: -627007623076817387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_25
+      name: DiceVectorDark_13
       rect:
         serializedVersion: 2
-        x: 158
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        x: 166
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -720,20 +480,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94e3c6da0138c9c60800000000000000
-      internalID: 7826274360115347017
+      spriteID: 158a86c45bf860610800000000000000
+      internalID: 1587113927528458321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_26
+      name: DiceVectorDark_14
       rect:
         serializedVersion: 2
-        x: 316
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        x: 332
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -741,20 +501,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b501ad5934696e860800000000000000
-      internalID: 7558894241609027675
+      spriteID: 6f1527abd40efdfa0800000000000000
+      internalID: -5773649572820528650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_27
+      name: DiceVectorDark_15
       rect:
         serializedVersion: 2
-        x: 474
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        x: 498
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -762,20 +522,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2ad1afab16f834e0800000000000000
-      internalID: -2001579435595015635
+      spriteID: c6d69b21b000524a0800000000000000
+      internalID: -6618884029792293524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_28
+      name: DiceVectorDark_16
       rect:
         serializedVersion: 2
-        x: 632
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        x: 664
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -783,20 +543,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2968f71304b8fe70800000000000000
-      internalID: 9149260568383220015
+      spriteID: 013444fdda6047bb0800000000000000
+      internalID: -4939315547473689840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiceVector_29
+      name: DiceVectorDark_17
       rect:
         serializedVersion: 2
-        x: 790
-        y: 2.399994
-        width: 158.66667
-        height: 159.6
+        x: 830
+        y: 334.4
+        width: 166.66667
+        height: 166.6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -804,8 +564,260 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2f1572efc3836d10800000000000000
-      internalID: 2117681178675060524
+      spriteID: 964aca14bf56a8cd0800000000000000
+      internalID: -2555117708766305175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e8a5aec72920c40800000000000000
+      internalID: 5477101162041347680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_19
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee0c2412185c68f70800000000000000
+      internalID: 9189249248095551726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_20
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4417ca25d2905850800000000000000
+      internalID: 6363747717717890125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_21
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d372adb34212d90800000000000000
+      internalID: -7124373296041738971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_22
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb31bd86c65919e0800000000000000
+      internalID: -1650192377673860164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_23
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 168.4
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bac516949734afc0800000000000000
+      internalID: -3484599100365223243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541fe0763e5b81af0800000000000000
+      internalID: -425390176495275707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_25
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5618339e98ffaba0800000000000000
+      internalID: -6075364012341062052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_26
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 701d6457b76fde730800000000000000
+      internalID: 4030148251675447559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_27
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcff92bb34b01c070800000000000000
+      internalID: 8124787588283891663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_28
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82eae13fcc6ad1a0800000000000000
+      internalID: -6783990251528723825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DiceVectorDark_29
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 2.399994
+        width: 166.66667
+        height: 166.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6a37a5ef1c6da20800000000000000
+      internalID: 3086867892792436445
       vertices: []
       indices: 
       edges: []

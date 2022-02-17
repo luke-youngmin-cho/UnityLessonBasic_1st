@@ -23,7 +23,14 @@ public class DicePlayUI : MonoBehaviour
         {
             normalDicePanel.SetActive(true);
             inverseDicePanel.SetActive(false);
-        }
-            
+        }            
+    }
+    public void RollBackDicePanel()
+    {
+        if (inverseDicePanel.activeSelf)
+        {
+            normalDicePanel.SetActive(true);
+            inverseDicePanel.SetActive(false);
+        }        
     }
 }
