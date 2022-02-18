@@ -66,33 +66,38 @@ public class DicePlayManager : MonoBehaviour
     public void RollADice()
     {
         if (diceNum < 1) return;
+        if (DiceAnimationUI.instance.isAvailable == false) return;
 
         diceNum--;
         int diceValue = Random.Range(1, 7);
         diceValueText.text = diceValue.ToString();
+        DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue);
     }
     public void RollADiceInverse()
     {
         if (diceNum < 1) return;
-
+        if (DiceAnimationUI.instance.isAvailable == false) return;
         diceNum--;
         int diceValue = Random.Range(1, 7);
         diceValueText.text = diceValue.ToString();
+        DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue * (-1));
     }
     public void RollAGoldenDice(int diceValue)
     {
         if (goldenDiceNum < 1) return;
-
+        if (DiceAnimationUI.instance.isAvailable == false) return;
         goldenDiceNum--;
+        DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue);
     }
     public void RollAGoldenDiceInverse(int diceValue)
     {
         if (goldenDiceNum < 1) return;
-
+        if (DiceAnimationUI.instance.isAvailable == false) return;
         goldenDiceNum--;
+        DiceAnimationUI.instance.PlayDiceAnimation(diceValue);
         MovePlayer(diceValue * (-1));
     }
     // 해당 눈금만큼 플레이어를 이동
