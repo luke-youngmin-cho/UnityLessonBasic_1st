@@ -6,16 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     Transform tr;
     Rigidbody2D rb;
+    BoxCollider2D col;
     public float moveSpeed;
     public float jumpForce;
 
-    public bool isJumping;
-    public Transform groundDetectPoint;
-    public float groundMinDistance;
+    PlayerState playerState;
+
+    // Detectors
+    PlayerGroundDetector groundDetector;
     private void Awake()
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
+        groundDetector = GetComponent<PlayerGroundDetector>();
     }
     // Update is called once per frame
     void Update()
@@ -24,30 +28,35 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         rb.position += new Vector2(h * moveSpeed * Time.deltaTime, 0);
 
-        if(isJumping == false && Input.GetKeyDown(KeyCode.LeftAlt))
+        if (playerState != PlayerState.Jump && Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            isJumping = true;
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            playerState = PlayerState.Jump;
         }
+        UpdatePlayerState();
+    }
 
-        Vector2 origin = groundDetectPoint.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundMinDistance);
-        
-        Collider2D hitCol = hit.collider;
-        if(hitCol != null)
+    void UpdatePlayerState()
+    {
+        switch (playerState)
         {
-            if(hitCol.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            {
-                isJumping = false;
-            }
+            case PlayerState.Idle:
+                break;
+            case PlayerState.Run:
+                break;
+            case PlayerState.Jump:
+                if (groundDetector.isGrounded)
+                    playerState = PlayerState.Idle;
+                break;
+            default:
+                break;
         }
     }
-    private void OnDrawGizmos()
+
+    enum PlayerState
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(groundDetectPoint.position,
-                        new Vector3(groundDetectPoint.position.x,
-                                    groundDetectPoint.position.y - groundMinDistance,
-                                    groundDetectPoint.position.z));
+        Idle,
+        Run,
+        Jump,
     }
 }
