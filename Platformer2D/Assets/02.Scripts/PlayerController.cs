@@ -27,11 +27,12 @@ public class PlayerController : MonoBehaviour
     // States    
     public PlayerState playerState;
     public JumpState jumpState;
-
+    public RunState runState;
     // Detectors
     PlayerGroundDetector groundDetector;
 
     // animation
+    Animator animator;
     float animationTimeElapsed;
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         groundDetector = GetComponent<PlayerGroundDetector>();
+        animator = GetComponentInChildren<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -50,7 +52,27 @@ public class PlayerController : MonoBehaviour
         else if (h > 0)
             direction = 1;
 
-
+        if(groundDetector.isGrounded &&
+           jumpState == JumpState.Idle)
+        {
+            if(Mathf.Abs(h) > 0.1f) // 수평입력의 절댓값이 0보다 크면
+            {
+                if (playerState != PlayerState.Run) // 플레이어상태가 달리고있지 않으면
+                {
+                    playerState = PlayerState.Run; // 플레이어상태 달리기로 바꿈
+                    runState = RunState.PrepareToRun; // 달리기상태 달리기 준비로 바꿈
+                }
+            }
+            else // 수평입력이 0이면
+            {
+                h = 0;
+                if (playerState != PlayerState.Idle) // 플레이어상태가 Idle이 아니면
+                {
+                    playerState = PlayerState.Idle; // 플레이어 상태를 Idle로
+                    animator.Play("Idle");
+                }   
+            }
+        }
         rb.position += new Vector2(h * moveSpeed * Time.deltaTime, 0);
         //rb.velocity = new Vector2(h * moveSpeed , 0); 
         // Rigidbody.velocity 를 물리연산 주기마다 실행할 경우 
@@ -75,6 +97,7 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Idle:
                 break;
             case PlayerState.Run:
+                UpdateRunState();
                 break;
             case PlayerState.Jump:
                 UpdateJumpState();
@@ -83,12 +106,24 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+    void UpdateRunState()
+    {
+        switch (runState)
+        {
+            case RunState.PrepareToRun:
+                animator.Play("Run");
+                runState = RunState.Running;
+                break;
+            case RunState.Running:
+                break;
+        }
+    }
     void UpdateJumpState()
     {
         switch (jumpState)
         {
             case JumpState.PrepareToJump:
-                //todo -> changeAnimation
+                animator.Play("Jump");
                 rb.velocity = Vector2.zero;
                 rb.AddForce(new Vector2(0f, jumpForce),ForceMode2D.Impulse);
                 jumpState = JumpState.Jumping;
@@ -104,6 +139,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerState = PlayerState.Idle;
                     jumpState = JumpState.Idle;
+                    animator.Play("Idle");
                 }
                 break;
         }
@@ -120,5 +156,11 @@ public class PlayerController : MonoBehaviour
         PrepareToJump, // Jump 에 필요한 파라미터 세팅, 애니메이션 전환 등 
         Jumping, // Jump 물리연산을 시작하는 단계 
         InFlight, // Jump 물리연산이 끝나고 공중에 캐릭터가 떠있는 상태
+    }
+    public enum RunState
+    {
+        Idle,
+        PrepareToRun,
+        Running,
     }
 }

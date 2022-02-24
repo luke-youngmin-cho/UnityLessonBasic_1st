@@ -11,7 +11,7 @@ public class PlayerGroundDetector : MonoBehaviour
 
     public LayerMask groudLayer;
     // 다른 클래스에서는 접근을 해야하지만 인스펙터창에서는 숨기고싶을때
-    [HideInInspector] public bool isGrounded;
+    public bool isGrounded;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
