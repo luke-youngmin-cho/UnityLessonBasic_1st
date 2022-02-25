@@ -522,6 +522,7 @@ MonoBehaviour:
   jumpForce: 3
   playerState: 0
   jumpState: 0
+  runState: 0
 --- !u!1 &1541540521
 GameObject:
   m_ObjectHideFlags: 0

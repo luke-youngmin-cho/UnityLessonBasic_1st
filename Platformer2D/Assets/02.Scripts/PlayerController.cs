@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D col;
     public float moveSpeed;
     public float jumpForce;
+    Vector2 move; // direction vector (방향 벡터), 여기서는 크기가 1이 넘어가도 사용함.
 
     int _direction;
     int direction
@@ -28,19 +29,36 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState;
     public JumpState jumpState;
     public RunState runState;
+    public AttackState attackState;
     // Detectors
     PlayerGroundDetector groundDetector;
 
     // animation
     Animator animator;
     float animationTimeElapsed;
+    float attackTime;
     private void Awake()
     {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
-        groundDetector = GetComponent<PlayerGroundDetector>();
+        groundDetector = GetComponent<PlayerGroundDetector>();        
         animator = GetComponentInChildren<Animator>();
+
+        attackTime = GetAnimationTime("Attack");
+    }
+    float GetAnimationTime(string name)
+    {
+        float time = 0;
+        RuntimeAnimatorController ac = animator.runtimeAnimatorController;
+        for (int i = 0; i < ac.animationClips.Length; i++)
+        {
+            if(ac.animationClips[i].name == name)
+            {
+                time = ac.animationClips[i].length; break;
+            }
+        }
+        return time;
     }
     // Update is called once per frame
     void Update()
@@ -52,8 +70,11 @@ public class PlayerController : MonoBehaviour
         else if (h > 0)
             direction = 1;
 
-        if(groundDetector.isGrounded &&
-           jumpState == JumpState.Idle)
+        move.x = h;
+
+        if (groundDetector.isGrounded &&
+           jumpState == JumpState.Idle &&
+           attackState == AttackState.Idle)
         {
             if(Mathf.Abs(h) > 0.1f) // 수평입력의 절댓값이 0보다 크면
             {
@@ -73,7 +94,7 @@ public class PlayerController : MonoBehaviour
                 }   
             }
         }
-        rb.position += new Vector2(h * moveSpeed * Time.deltaTime, 0);
+        
         //rb.velocity = new Vector2(h * moveSpeed , 0); 
         // Rigidbody.velocity 를 물리연산 주기마다 실행할 경우 
         // 비정상적인 동작을 일으킬 가능성이 있으므로 
@@ -87,9 +108,23 @@ public class PlayerController : MonoBehaviour
             playerState = PlayerState.Jump;
             jumpState = JumpState.PrepareToJump;
         }
+
+        if (playerState != PlayerState.Attack && Input.GetKeyDown(KeyCode.A))
+        {
+            playerState = PlayerState.Attack;
+            attackState = AttackState.PrepareToAttack;
+        }
         UpdatePlayerState();
     }
-
+    private void FixedUpdate()
+    {
+        FixedUpdateMovement();
+    }
+    void FixedUpdateMovement()
+    {
+        Vector2 velocity = new Vector2(move.x * moveSpeed, move.y);
+        rb.position += velocity * Time.fixedDeltaTime;
+    }
     void UpdatePlayerState()
     {
         switch (playerState)
@@ -101,6 +136,9 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.Jump:
                 UpdateJumpState();
+                break;
+            case PlayerState.Attack:
+                UpdateAttackState();
                 break;
             default:
                 break;
@@ -144,11 +182,34 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+    void UpdateAttackState()
+    {
+        switch (attackState)
+        {
+            case AttackState.PrepareToAttack:
+                animator.Play("Attack");
+                attackState = AttackState.Attacking;
+                break;
+            case AttackState.Attacking:
+                if(animationTimeElapsed > attackTime)
+                {
+                    attackState = AttackState.Attacked;
+                }
+                animationTimeElapsed += Time.deltaTime;
+                break;
+            case AttackState.Attacked:
+                playerState = PlayerState.Idle;
+                attackState = AttackState.Idle;
+                animator.Play("Idle");
+                break;
+        }
+    }
     public enum PlayerState
     {
         Idle,
         Run,
         Jump,
+        Attack,
     }
     public enum JumpState
     {
@@ -162,5 +223,12 @@ public class PlayerController : MonoBehaviour
         Idle,
         PrepareToRun,
         Running,
+    }
+    public enum AttackState
+    {
+        Idle,
+        PrepareToAttack,
+        Attacking,
+        Attacked,
     }
 }
