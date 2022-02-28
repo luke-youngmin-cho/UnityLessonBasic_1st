@@ -24,12 +24,23 @@ public class PlayerController : MonoBehaviour
         }
         get { return _direction; }
     }
+    int directionInit = 1;
 
     // States    
     public PlayerState playerState;
     public JumpState jumpState;
     public RunState runState;
     public AttackState attackState;
+    public DashState dashState;
+    public DashAttackState dashAttackState;
+    public bool isAttacking
+    {
+        get
+        {
+            return (attackState != AttackState.Idle || 
+                    dashAttackState != DashAttackState.Idle);
+        }
+    }
     // Detectors
     PlayerGroundDetector groundDetector;
 
@@ -37,6 +48,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     float animationTimeElapsed;
     float attackTime;
+    float dashTime;
+    float dashAttackTime;
     private void Awake()
     {
         tr = GetComponent<Transform>();
@@ -45,7 +58,10 @@ public class PlayerController : MonoBehaviour
         groundDetector = GetComponent<PlayerGroundDetector>();        
         animator = GetComponentInChildren<Animator>();
 
+        direction = directionInit;
         attackTime = GetAnimationTime("Attack");
+        dashTime = GetAnimationTime("Dash");
+        dashAttackTime = GetAnimationTime("DashAttack");
     }
     float GetAnimationTime(string name)
     {
@@ -65,35 +81,45 @@ public class PlayerController : MonoBehaviour
     {
         // 키보드 좌우 입력 받아서 게임오브젝트를 좌우로 움직이는 기능
         float h = Input.GetAxis("Horizontal");
-        if (h < 0)
-            direction = -1;
-        else if (h > 0)
-            direction = 1;
 
-        move.x = h;
-
-        if (groundDetector.isGrounded &&
-           jumpState == JumpState.Idle &&
-           attackState == AttackState.Idle)
+        if (IsChangeDirectionPossible())
         {
-            if(Mathf.Abs(h) > 0.1f) // 수평입력의 절댓값이 0보다 크면
+            if (h < 0)
+                direction = -1;
+            else if (h > 0)
+                direction = 1;
+        }
+
+        if (IsHorizontalMovePossible()) 
+        {
+            move.x = h;
+
+            if (groundDetector.isGrounded &&
+                jumpState == JumpState.Idle &&
+                isAttacking == false)
             {
-                if (playerState != PlayerState.Run) // 플레이어상태가 달리고있지 않으면
+                if (Mathf.Abs(h) > 0.1f) // 수평입력의 절댓값이 0보다 크면
                 {
-                    playerState = PlayerState.Run; // 플레이어상태 달리기로 바꿈
-                    runState = RunState.PrepareToRun; // 달리기상태 달리기 준비로 바꿈
+                    if (playerState != PlayerState.Run) // 플레이어상태가 달리고있지 않으면
+                    {
+                        playerState = PlayerState.Run; // 플레이어상태 달리기로 바꿈
+                        runState = RunState.PrepareToRun; // 달리기상태 달리기 준비로 바꿈
+                    }
+                }
+                else // 수평입력이 0이면
+                {
+                    h = 0;
+                    if (playerState != PlayerState.Idle) // 플레이어상태가 Idle이 아니면
+                    {
+                        playerState = PlayerState.Idle; // 플레이어 상태를 Idle로
+                        animator.Play("Idle");
+                    }
                 }
             }
-            else // 수평입력이 0이면
-            {
-                h = 0;
-                if (playerState != PlayerState.Idle) // 플레이어상태가 Idle이 아니면
-                {
-                    playerState = PlayerState.Idle; // 플레이어 상태를 Idle로
-                    animator.Play("Idle");
-                }   
-            }
         }
+        
+
+        
         
         //rb.velocity = new Vector2(h * moveSpeed , 0); 
         // Rigidbody.velocity 를 물리연산 주기마다 실행할 경우 
@@ -105,14 +131,23 @@ public class PlayerController : MonoBehaviour
         
         if (playerState != PlayerState.Jump && Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            playerState = PlayerState.Jump;
-            jumpState = JumpState.PrepareToJump;
+            ChangePlayerState(PlayerState.Jump);
         }
 
-        if (playerState != PlayerState.Attack && Input.GetKeyDown(KeyCode.A))
+        if (playerState != PlayerState.Dash && Input.GetKeyDown(KeyCode.LeftShift))
         {
-            playerState = PlayerState.Attack;
-            attackState = AttackState.PrepareToAttack;
+            ChangePlayerState(PlayerState.Dash);
+        }
+        Debug.Log($"{playerState}, {dashState}" );
+        // Attack actions
+        if (isAttacking == false && Input.GetKeyDown(KeyCode.A))
+        {
+            PlayerState tmpStateToChange = PlayerState.Attack;            
+            if (dashState != DashState.Idle)
+            {
+                tmpStateToChange = PlayerState.DashAttack;
+            }
+            ChangePlayerState(tmpStateToChange);
         }
         UpdatePlayerState();
     }
@@ -124,6 +159,55 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity = new Vector2(move.x * moveSpeed, move.y);
         rb.position += velocity * Time.fixedDeltaTime;
+    }
+    // 플레이어의 상태가 바뀔때 
+    // 초기화 해야하는 요소들을 초기화해준다. 
+    void ChangePlayerState(PlayerState stateToChange)
+    {
+        animationTimeElapsed = 0;
+        switch (playerState)
+        {
+            case PlayerState.Idle:
+                break;
+            case PlayerState.Run:
+                break;
+            case PlayerState.Jump:
+                jumpState = JumpState.Idle;
+                break;
+            case PlayerState.Attack:
+                attackState = AttackState.Idle;
+                break;
+            case PlayerState.Dash:
+                dashState = DashState.Idle;
+                break;
+            case PlayerState.DashAttack:
+                dashAttackState = DashAttackState.Idle;
+                break;
+            default:
+                break;
+        }
+        switch (stateToChange)
+        {
+            case PlayerState.Idle:
+                break;
+            case PlayerState.Run:
+                break;
+            case PlayerState.Jump:
+                jumpState = JumpState.PrepareToJump;
+                break;
+            case PlayerState.Attack:
+                attackState = AttackState.PrepareToAttack;
+                break;
+            case PlayerState.Dash:
+                dashState = DashState.PrepareToDash;
+                break;
+            case PlayerState.DashAttack:
+                dashAttackState = DashAttackState.PrepareToDashAttack;
+                break;
+            default:
+                break;
+        }
+        playerState = stateToChange;
     }
     void UpdatePlayerState()
     {
@@ -139,6 +223,12 @@ public class PlayerController : MonoBehaviour
                 break;
             case PlayerState.Attack:
                 UpdateAttackState();
+                break;
+            case PlayerState.Dash:
+                UpdateDashState();
+                break;
+            case PlayerState.DashAttack:
+                UpdateDashAttackState();
                 break;
             default:
                 break;
@@ -200,16 +290,123 @@ public class PlayerController : MonoBehaviour
             case AttackState.Attacked:
                 playerState = PlayerState.Idle;
                 attackState = AttackState.Idle;
+                animationTimeElapsed = 0;
                 animator.Play("Idle");
                 break;
         }
     }
+    void UpdateDashState()
+    {
+        switch (dashState)
+        {
+            case DashState.Idle:
+                break;
+            case DashState.PrepareToDash:
+                animator.Play("Dash");
+                dashState = DashState.Dashing;
+                break;
+            case DashState.Dashing:
+                if(animationTimeElapsed < dashTime * 3/4)
+                {
+                    move.x = direction * moveSpeed * 1.5f;
+                }
+                else
+                {
+                    dashState = DashState.Dashed;
+                }
+                animationTimeElapsed += Time.deltaTime;
+                break;
+            case DashState.Dashed:
+                if(animationTimeElapsed > dashTime)
+                {
+                    playerState = PlayerState.Idle;
+                    dashState = DashState.Idle;
+                    animationTimeElapsed = 0;
+                    animator.Play("Idle");
+                }
+                else
+                {
+                    move.x = direction * moveSpeed / 4f;
+                }
+                animationTimeElapsed += Time.deltaTime;
+                break;
+            default:
+                break;
+        }
+    }
+    void UpdateDashAttackState()
+    {
+        switch (dashAttackState)
+        {
+            case DashAttackState.Idle:
+                break;
+            case DashAttackState.PrepareToDashAttack:
+                animator.Play("DashAttack");
+                dashAttackState = DashAttackState.DashingAttacking;
+                break;
+            case DashAttackState.DashingAttacking:
+                if (animationTimeElapsed < dashAttackTime * 1 / 4)
+                {
+                    move.x = direction * moveSpeed / 4;
+                }
+                else if(animationTimeElapsed < dashAttackTime * 3 / 4)
+                {
+                    move.x = direction * moveSpeed * 1.5f;
+                }
+                else
+                {
+                    dashAttackState = DashAttackState.DashAttacked;
+                }
+                animationTimeElapsed += Time.deltaTime;
+                break;
+            case DashAttackState.DashAttacked:
+                if(animationTimeElapsed < dashAttackTime)
+                {
+                    move.x = direction * moveSpeed / 4;
+                }
+                else
+                {
+                    playerState = PlayerState.Idle;
+                    dashAttackState = DashAttackState.Idle;
+                    animationTimeElapsed = 0;
+                    animator.Play("Idle");
+                }
+                animationTimeElapsed += Time.deltaTime;
+                break;
+            default:
+                break;
+        }
+    }
+    private bool IsChangeDirectionPossible()
+    {
+        bool isOK = false;
+        if(playerState == PlayerState.Idle ||
+           playerState == PlayerState.Run  ||
+           playerState == PlayerState.Jump)
+        {
+            isOK = true;
+        }
+        return isOK;
+    }
+    private bool IsHorizontalMovePossible()
+    {
+        bool isOK = false;
+        if (playerState == PlayerState.Idle ||
+           playerState == PlayerState.Run)
+        {
+            isOK = true;
+        }
+        return isOK;
+    }
+
     public enum PlayerState
     {
         Idle,
         Run,
         Jump,
         Attack,
+        Dash,
+        DashAttack,
     }
     public enum JumpState
     {
@@ -230,5 +427,19 @@ public class PlayerController : MonoBehaviour
         PrepareToAttack,
         Attacking,
         Attacked,
+    }
+    public enum DashState
+    {
+        Idle,
+        PrepareToDash,
+        Dashing,
+        Dashed,
+    }
+    public enum DashAttackState
+    {
+        Idle,
+        PrepareToDashAttack,
+        DashingAttacking,
+        DashAttacked,
     }
 }
