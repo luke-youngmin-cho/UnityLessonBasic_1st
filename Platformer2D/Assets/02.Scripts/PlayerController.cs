@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     Transform tr;
     Rigidbody2D rb;
     BoxCollider2D col;
+    Player player;
     public float moveSpeed;
     public float jumpForce;
     Vector2 move; // direction vector (방향 벡터), 여기서는 크기가 1이 넘어가도 사용함.
@@ -50,8 +51,19 @@ public class PlayerController : MonoBehaviour
     float attackTime;
     float dashTime;
     float dashAttackTime;
+
+    // kinematics
+    public Vector2 knockBackForce;
+
+    // casting
+    public Vector2 attackCastingCenter;
+    public Vector2 attackCastingSize;
+    public Vector2 attackCastingDirection;
+    public LayerMask attackTargetLayer;
+    public int attackDamage = 5;
     private void Awake()
     {
+        player = GetComponent<Player>();
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
@@ -283,6 +295,19 @@ public class PlayerController : MonoBehaviour
             case AttackState.Attacking:
                 if(animationTimeElapsed > attackTime)
                 {
+                    RaycastHit2D hit = Physics2D.BoxCast(rb.position + attackCastingCenter,
+                                                          attackCastingSize,
+                                                          0f,
+                                                          attackCastingDirection,
+                                                          attackTargetLayer);
+                    if(hit.collider != null)
+                    {
+                        Enemy enemy = null;
+                        if(hit.collider.TryGetComponent(out enemy))
+                        {
+                            enemy.hp -= attackDamage;
+                        }
+                    }
                     attackState = AttackState.Attacked;
                 }
                 animationTimeElapsed += Time.deltaTime;
@@ -398,6 +423,25 @@ public class PlayerController : MonoBehaviour
         }
         return isOK;
     }
+
+    public void KnockBack()
+    {
+        if (player.invincible) return;
+        move = Vector2.zero;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(new Vector2(knockBackForce.x * (-direction), knockBackForce.y), ForceMode2D.Impulse);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        
+        Gizmos.DrawWireCube(new Vector3(transform.position.x + attackCastingCenter.x,
+                                        transform.position.y + attackCastingCenter.y,
+                                        0f),
+                            new Vector3(attackCastingSize.x, attackCastingSize.y, 0f));
+    }
+
 
     public enum PlayerState
     {

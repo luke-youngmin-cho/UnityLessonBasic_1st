@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
         if(go.layer == LayerMask.NameToLayer("Player"))
         {
             Player player = go.GetComponent<Player>();
+            PlayerController controller = go.GetComponent<PlayerController>();
+            controller.KnockBack();
             player.Hurt(damage);
         }
     }

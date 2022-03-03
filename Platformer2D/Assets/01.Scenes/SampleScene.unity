@@ -694,6 +694,14 @@ MonoBehaviour:
   attackState: 0
   dashState: 0
   dashAttackState: 0
+  knockBackForce: {x: 0.5, y: 0.5}
+  attackCastingCenter: {x: 0.3, y: 0}
+  attackCastingSize: {x: 0.7, y: 0.7}
+  attackCastingDirection: {x: 0, y: 0}
+  attackTargetLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  attackDamage: 5
 --- !u!114 &1439797477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 0
   hpMax: 100
+  invincible: 0
+  invincibleTime: 0.5
 --- !u!1 &1541540521
 GameObject:
   m_ObjectHideFlags: 0
