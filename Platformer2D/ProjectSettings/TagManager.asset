@@ -13,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Enemy
+  - EnemyCollider
+  - 
+  - 
   - 
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 
