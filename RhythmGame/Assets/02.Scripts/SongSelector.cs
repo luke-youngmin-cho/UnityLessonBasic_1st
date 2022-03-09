@@ -4,20 +4,21 @@ using UnityEngine;
 using UnityEngine.Video;
 public class SongSelector : MonoBehaviour
 {
-    public VideoPlayer vp;
-    public SongData songData;
+    public static SongSelector instance;
+    private void Awake()
+    {
+        if(instance != null)
+            Destroy(instance);
+        instance = this;
+        DontDestroyOnLoad(instance);
+    }
+    public bool isPlayable { get { return songData != null && clip != null; } }
+    [HideInInspector] public VideoClip clip;
+    [HideInInspector] public SongData songData;
     public void LoadSong(string videoName)
     {
-        VideoClip vc = Resources.Load<VideoClip>(videoName);
-        Debug.Log(vc);
-        vp.clip = vc;
-        TextAsset songDataText = Resources.Load<TextAsset>(videoName);
-        Debug.Log(songDataText);
+        clip = Resources.Load<VideoClip>($"VideoClips/{videoName}");
+        TextAsset songDataText = Resources.Load<TextAsset>($"SongDatas/{videoName}");
         songData = JsonUtility.FromJson<SongData>(songDataText.ToString());
-        Debug.Log(songData);
-    }
-    public void TestVideoPlay()
-    {
-        vp.Play();
     }
 }
