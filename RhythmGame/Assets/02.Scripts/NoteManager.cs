@@ -5,13 +5,32 @@ using UnityEngine;
 public class NoteManager : MonoBehaviour
 {
     static public NoteManager instance;
-    Transform noteSpawnersTransform;
+    static public float noteFallingSpeed = 1f;
+    static public float judgeHit_Bad = 3f;
+    static public float judgeHit_Miss = 2f;
+    static public float judgeHit_Good = 1.7f;
+    static public float judgeHit_Great = 1.5f;
+    static public float judgeHit_Cool = 1.2f;
+
+    public Transform noteSpawnersTransform;
+    public Transform noteHittersTransform;
+    public float noteFallingDistance
+    {
+        get { return noteSpawnersTransform.position.y - noteHittersTransform.position.y; }
+    }
+    public float noteFallingTime
+    {
+        get { return noteFallingDistance / noteFallingSpeed; }
+    }
+
+
     Dictionary<KeyCode, NoteSpawner> spawners = new Dictionary<KeyCode, NoteSpawner>();
     public Queue<NoteData> queue = new Queue<NoteData>();
     private void Awake()
     {
         instance = this;
-        noteSpawnersTransform = transform.Find("NoteSpawners");
+        /*noteSpawnersTransform = transform.Find("NoteSpawners");
+        noteHittersTransform = transform.Find("NoteHitters");*/
         NoteSpawner[] tmpSpawners = noteSpawnersTransform.GetComponentsInChildren<NoteSpawner>();
         foreach (NoteSpawner spawner in tmpSpawners)
         {
@@ -50,5 +69,10 @@ public class NoteManager : MonoBehaviour
             yield return null;
         }
     }
-        
+    public void StopSpawn()
+    {
+        StopAllCoroutines();
+    }
+
+
 }

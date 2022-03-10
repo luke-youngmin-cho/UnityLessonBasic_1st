@@ -6,7 +6,6 @@ public class Note : MonoBehaviour
 {
     public KeyCode keyCode;
     Transform tr;
-    public float noteSpeed;
     private void Awake()
     {
         tr = transform;
@@ -17,7 +16,7 @@ public class Note : MonoBehaviour
     }
     void Move()
     {
-        tr.Translate(Vector2.down * noteSpeed * Time.fixedDeltaTime);
+        tr.Translate(Vector2.down * NoteManager.noteFallingSpeed * Time.fixedDeltaTime);
     }
     public void Hit(HitType type)
     {
@@ -28,10 +27,13 @@ public class Note : MonoBehaviour
             case HitType.Miss:
                 break;
             case HitType.Good:
+                ScoreUI.instance.score += 80;
                 break;
             case HitType.Great:
+                ScoreUI.instance.score += 100;
                 break;
             case HitType.Cool:
+                ScoreUI.instance.score += 120;
                 break;
             default:
                 break;
