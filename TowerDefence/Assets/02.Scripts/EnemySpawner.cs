@@ -4,37 +4,55 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] PoolElement[] poolElements;
-    private List<GameObject> enemies;
-    public int spawnNum;
-    public float spawnTimeGap;
-    private float elapsedTime;
+    [SerializeField] SpawnElement[] spawnElements;
+    [System.Serializable]
+    class SpawnElement
+    {
+        public PoolElement poolElement;
+        public float spawnTimeGap;
+        public bool done;
+    }
+    float[] spawnTimer;
     Transform tr;
     private void Awake()
     {
         tr = transform;
-        enemies = new List<GameObject>();
-        foreach (PoolElement poolElement in poolElements)
+        spawnTimer = new float[spawnElements.Length];
+
+        for (int i = 0; i < spawnElements.Length; i++)
         {
-            ObjectPool.instance.AddPoolElement(poolElement);
+            spawnTimer[i] = spawnElements[i].spawnTimeGap;
+            ObjectPool.instance.AddPoolElement(spawnElements[i].poolElement);
         }
     }
     private void Update()
     {
-        int num = enemies.Count;
-        if(num < spawnNum)
+        for (int i = 0; i < spawnElements.Length; i++)
         {
-            if (elapsedTime > spawnTimeGap)
-            {
-                Spawn();
-                elapsedTime = 0;
+            string tmpTag = spawnElements[i].poolElement.tag;
+            int num = ObjectPool.GetSpawnedObjectNumber(tmpTag);
+
+            if (spawnElements[i].done == false){
+
+                if (num < spawnElements[i].poolElement.size)
+                {
+                    if (spawnTimer[i] < 0)
+                    {
+                        Spawn(tmpTag);
+                        spawnTimer[i] = spawnElements[i].spawnTimeGap;
+                    }
+                    else
+                        spawnTimer[i] -= Time.deltaTime;
+                }
+                else
+                    spawnElements[i].done = true;
             }
-            elapsedTime += Time.deltaTime;
         }
+        
     }
     
-    private void Spawn()
+    private void Spawn(string tag)
     {
-        
+        ObjectPool.SpawnFromPool(tag, tr.position);
     }
 }
