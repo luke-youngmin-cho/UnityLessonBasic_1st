@@ -22,7 +22,7 @@ public class WayPoints : MonoBehaviour
             nextWayPoint = points[currentPointIndex + 1];
             isOK = true;
         }
-        Debug.Log($"Tried to get {currentPointIndex + 1} waypoint , {isOK}");
+        //Debug.Log($"Tried to get {currentPointIndex + 1} waypoint , {isOK}");
         return isOK;
     }
 }
