@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towers:
   - {fileID: 9172565223392121572, guid: 6dee29ee5f35bbc47afd3aef1af549b0, type: 3}
+  - {fileID: 9172565223392121572, guid: 4cbf78559c3a4914fa8f9e7067bb1cf4, type: 3}
+  - {fileID: 9172565223392121572, guid: ddccede799828cc4ab8a13e953a2074b, type: 3}
