@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7053426511839328223}
-  - component: {fileID: 7912438317695052287}
+  - component: {fileID: -7386219122027669984}
   m_Layer: 0
   m_Name: Laser2
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7912438317695052287
+--- !u!114 &-7386219122027669984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172565223392121572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71dc8b952fdc74a4a86b60e64572e6ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 18b6ef5ae5c583a429367ad178aa6c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: Laser2
+  info: {fileID: 11400000, guid: e7013c1cae29e104b8c34d53380f2001, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1048576
+  detectRange: 2
+  turretRotatePoint: {fileID: 6856338957635226105}
 --- !u!1001 &6856338957635097465
 PrefabInstance:
   m_ObjectHideFlags: 0

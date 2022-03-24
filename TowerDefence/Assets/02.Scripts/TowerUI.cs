@@ -24,16 +24,16 @@ public class TowerUI : MonoBehaviour
     }
     public void OnUpgradeButton()
     {
-        int nextLevel = node.towerInfo.level + 1;
-        if(TowerAssets.instance.TryGetTowerName(node.towerInfo.type, nextLevel, out string towerName))
+        int nextLevel = node.tower.info.level + 1;
+        if(TowerAssets.instance.TryGetTowerName(node.tower.info.type, nextLevel, out string towerName))
         {
-            
+            node.BuildTowerHere(towerName);
         }
         
     }
 
     public void OnSellButton()
     {
-
+        node.DestroyTowerHere();
     }
 }

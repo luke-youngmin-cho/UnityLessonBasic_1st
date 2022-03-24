@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &43199463
@@ -730,6 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &110457078
@@ -1001,6 +1003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &149477999
@@ -1111,6 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &173647384
@@ -1207,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc70e5406125a724c8b2691831bbf519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  node: {fileID: 0}
   upgradePriceText: {fileID: 945682503}
   sellPriceText: {fileID: 1733767450}
 --- !u!114 &189826577
@@ -1281,6 +1286,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
+  - {fileID: 806825608}
   - {fileID: 1953452448}
   - {fileID: 1263225190}
   - {fileID: 2074892994}
@@ -1339,6 +1345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &203638359
@@ -1479,6 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &235128458
@@ -1589,6 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &270567704
@@ -1699,6 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &280665118
@@ -1809,6 +1819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &282688325
@@ -1919,6 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &303244320
@@ -2029,6 +2041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &311959959
@@ -2234,6 +2247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &327052366
@@ -2518,6 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &400047523
@@ -2723,6 +2738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &414968982
@@ -2863,6 +2879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &468234533
@@ -3147,6 +3164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &481438615
@@ -3257,6 +3275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &483919444
@@ -3367,6 +3386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &484965319
@@ -3477,6 +3497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &501839597
@@ -3687,6 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &566939114
@@ -3892,6 +3914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &625984152
@@ -4002,6 +4025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &632911082
@@ -4112,6 +4136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &654394321
@@ -4342,6 +4367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &679813243
@@ -4452,6 +4478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &683363939
@@ -4562,6 +4589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &691354467
@@ -4702,6 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &704543145
@@ -4812,6 +4841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &738167403
@@ -4922,6 +4952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &744734907
@@ -5187,6 +5218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &774626101
@@ -5297,6 +5329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &793011255
@@ -5407,6 +5440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &793749189
@@ -5471,6 +5505,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793749186}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &806825607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806825608}
+  - component: {fileID: 806825611}
+  - component: {fileID: 806825610}
+  - component: {fileID: 806825609}
+  m_Layer: 5
+  m_Name: OutsideHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &806825608
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806825607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 189826580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 5000, y: 5000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &806825609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806825607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 189826575}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &806825610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806825607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &806825611
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806825607}
+  m_CullTransparentMesh: 1
 --- !u!1 &806825946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,6 +5751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &820529624
@@ -6007,6 +6147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &913752401
@@ -6196,6 +6337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &947075313
@@ -6593,6 +6735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &986146820
@@ -6703,6 +6846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &990888373
@@ -6813,6 +6957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1001285112
@@ -7018,6 +7163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1002520945
@@ -7128,6 +7274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1011881299
@@ -7238,6 +7385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1037343730
@@ -7415,6 +7563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1050734017
@@ -7525,6 +7674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1056974605
@@ -7756,6 +7906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1064432010
@@ -7866,6 +8017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1067675247
@@ -8006,6 +8158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1086186913
@@ -8116,6 +8269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1099484560
@@ -8578,6 +8732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1135910372
@@ -8688,6 +8843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1160262489
@@ -8988,6 +9144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1210998151
@@ -9128,6 +9285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1227226165
@@ -9238,6 +9396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1249772872
@@ -9348,6 +9507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1249910471
@@ -9538,7 +9698,7 @@ RectTransform:
   m_Children:
   - {fileID: 945682505}
   m_Father: {fileID: 189826580}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9819,6 +9979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1328854286
@@ -9929,6 +10090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1332759213
@@ -10417,6 +10579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1375219308
@@ -10527,6 +10690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1401045261
@@ -10667,6 +10831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1421938174
@@ -10777,6 +10942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1425338598
@@ -10966,6 +11132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1452198751
@@ -11106,6 +11273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1484555648
@@ -11216,6 +11384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1494262952
@@ -11599,6 +11768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1551368792
@@ -11804,6 +11974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1587732882
@@ -12009,6 +12180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1618013171
@@ -12119,6 +12291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1625102731
@@ -12324,6 +12497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1660629947
@@ -12434,6 +12608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1665746340
@@ -12639,6 +12814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1669439804
@@ -12805,6 +12981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1687404711
@@ -12915,6 +13092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1696180936
@@ -13025,6 +13203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1698051899
@@ -13135,6 +13314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1705903992
@@ -13275,6 +13455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1720968462
@@ -13761,6 +13942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1756940319
@@ -13871,6 +14053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1800466255
@@ -13981,6 +14164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1805215047
@@ -14186,6 +14370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1827150731
@@ -14296,6 +14481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1830085648
@@ -14485,6 +14671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1850032147
@@ -14595,6 +14782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1850745148
@@ -14855,6 +15043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1907302718
@@ -14950,7 +15139,7 @@ RectTransform:
   m_Children:
   - {fileID: 1733767452}
   m_Father: {fileID: 189826580}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -15041,6 +15230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1934158509
@@ -15151,6 +15341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1950633694
@@ -15247,7 +15438,7 @@ RectTransform:
   m_Children:
   - {fileID: 1845905114}
   m_Father: {fileID: 189826580}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -15297,7 +15488,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1953452450}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 189826576}
+        m_TargetAssemblyTypeName: TowerUI, Assembly-CSharp
+        m_MethodName: OnUpgradeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 189826575}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1953452450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15477,6 +15692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &1958954335
@@ -15867,6 +16083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &2024715571
@@ -16102,6 +16319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &2057695169
@@ -16293,7 +16511,7 @@ RectTransform:
   m_Children:
   - {fileID: 474807078}
   m_Father: {fileID: 189826580}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -16343,7 +16561,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2074892996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 189826576}
+        m_TargetAssemblyTypeName: TowerUI, Assembly-CSharp
+        m_MethodName: OnSellButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 189826575}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2074892996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16428,6 +16670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &2082817708
@@ -16728,6 +16971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &2097084442
@@ -16933,6 +17177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ebf8b4d53709e843ab16da4906494b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}
   buildAvailableColor: {r: 0.23565434, g: 0.9433962, b: 0.14833269, a: 0.39215687}
   buildNotAvailableColor: {r: 0.9528302, g: 0.149816, b: 0.149816, a: 0.39215687}
 --- !u!65 &2139924116

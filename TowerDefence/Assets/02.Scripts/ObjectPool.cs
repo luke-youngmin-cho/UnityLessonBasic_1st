@@ -40,6 +40,7 @@ public class ObjectPool : MonoBehaviour
             {
                 GameObject obj = CreateNewObject(poolElement.tag, poolElement.prefab);
                 ArrangePool(obj);
+                yield return null;
             }
         }
 
@@ -47,6 +48,7 @@ public class ObjectPool : MonoBehaviour
 
     public static void ReturnToPool(GameObject obj)
     {
+        Debug.Log($"{obj.name} returned to pool");
         if (!instance.spawnedQueueDictionrary.ContainsKey(obj.name))
             throw new Exception($"Pool doesn't include {obj.name}");
         instance.spawnedQueueDictionrary[obj.name].Enqueue(obj);
@@ -91,6 +93,7 @@ public class ObjectPool : MonoBehaviour
     {
         GameObject obj = Instantiate(prefab, transform);
         obj.name = tag;
+        Debug.Log($"set active false of {tag} ");
         obj.SetActive(false);
         return obj;
     }

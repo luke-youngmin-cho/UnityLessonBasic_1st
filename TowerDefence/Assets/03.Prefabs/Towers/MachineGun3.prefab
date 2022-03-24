@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 91bf7a7b80b3a4843af01f33ba35884e, type: 2}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1048576
+  detectRange: 2
+  turretRotatePoint: {fileID: 4871105789488085577}
 --- !u!1001 &4871105789488472283
 PrefabInstance:
   m_ObjectHideFlags: 0
