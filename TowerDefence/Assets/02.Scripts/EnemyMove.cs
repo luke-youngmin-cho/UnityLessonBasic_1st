@@ -34,6 +34,7 @@ public class EnemyMove : MonoBehaviour
             if (WayPoints.TryGetNextWayPoint(wayPointIndex, out nextWayPoint))
             {
                 wayPointIndex++;
+                tr.LookAt(nextWayPoint);
             }   
             else
             {

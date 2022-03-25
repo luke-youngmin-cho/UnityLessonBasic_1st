@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 459513232924663908}
   - component: {fileID: 459513232924663907}
   - component: {fileID: 459513232924663911}
+  - component: {fileID: 7108079306130450360}
   m_Layer: 20
   m_Name: Enemy
   m_TagString: Untagged
@@ -111,3 +112,17 @@ MonoBehaviour:
   wayPointIndex: 0
   speed: 5
   nextWayPoint: {fileID: 0}
+--- !u!114 &7108079306130450360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459513232924663906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c499136c2881cf44b88075fcc37e0bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpMax: 0
+  hpSlider: {fileID: 0}
