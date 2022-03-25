@@ -8,8 +8,13 @@ public class Enemy : MonoBehaviour
     {
         set
         {
-            _hp = value;
-            hpSlider.value = (float)_hp / hpMax;
+            if (value > 0)
+            {
+                _hp = value;
+                hpSlider.value = (float)_hp / hpMax;
+            }
+            else
+                gameObject.SetActive(false);
         }
         get
         {
@@ -18,8 +23,13 @@ public class Enemy : MonoBehaviour
     }
     public int hpMax;
     public Slider hpSlider;
-    private void Awake()
+    private void OnEnable()
     {
         hp = hpMax;
+    }
+
+    private void OnDisable()
+    {
+        ObjectPool.ReturnToPool(gameObject);
     }
 }
