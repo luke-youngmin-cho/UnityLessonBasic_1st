@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower_Missile : Tower
+public class Tower_Rocket : Tower
 {
-    public GameObject missilePrefab;
-    public Transform firePoint;
+    public GameObject rocketPrefab;
+    public Transform[] firePoints;
     public int damage;
     public float reloadTime;
     public float reloadTimer;
@@ -27,8 +27,11 @@ public class Tower_Missile : Tower
 
     private void Attack()
     {
-        GameObject missile = Instantiate(missilePrefab, firePoint.position, Quaternion.identity);
-        Vector3 dir = (target.transform.position - missile.transform.position).normalized;
-        missile.GetComponent<Missile>().SetMoveVector(dir);
+        foreach (var firePoint in firePoints)
+        {
+            GameObject missile = Instantiate(rocketPrefab, firePoint.position, Quaternion.identity);
+            Vector3 dir = (target.transform.position - missile.transform.position).normalized;
+            missile.GetComponent<Rocket>().Setup(dir, target, damage);
+        }
     }
 }
