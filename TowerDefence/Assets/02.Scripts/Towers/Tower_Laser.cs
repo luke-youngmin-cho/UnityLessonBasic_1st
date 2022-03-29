@@ -7,6 +7,10 @@ public class Tower_Laser : Tower
     public LineRenderer lineRenderer;
     public Transform firePoint;
     public ParticleSystem hitEffect;
+    public Buff buffSlow;
+
+    private Coroutine buffCoroutine = null;
+    private Transform targetMem;
     private void FixedUpdate()
     {
         Laser();
@@ -19,9 +23,25 @@ public class Tower_Laser : Tower
 
             if(hitEffect.isPlaying)
                 hitEffect.Stop();
+
+            buffSlow.doBuff = false;
+            if(buffCoroutine != null)
+                StopCoroutine(buffCoroutine);
         }
         else
         {
+            if(target != targetMem)
+            {
+                if(buffCoroutine !=null)
+                    StopCoroutine(buffCoroutine);
+                else
+                {
+                    buffSlow.doBuff = true;
+                    buffCoroutine = StartCoroutine(BuffManager.ActiveBuff(target.GetComponent<Enemy>(), buffSlow));
+                    targetMem = target;
+                }
+            }   
+
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, target.position);
             lineRenderer.enabled = true;
