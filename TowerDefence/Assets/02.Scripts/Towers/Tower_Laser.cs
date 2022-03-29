@@ -8,9 +8,13 @@ public class Tower_Laser : Tower
     public Transform firePoint;
     public ParticleSystem hitEffect;
     public Buff buffSlow;
+    public int damage;
+    public int damageIncrementPercent;
+    private float elapsedLaserTime;
+    private int damageStep = 0;
 
     private Coroutine buffCoroutine = null;
-    private Transform targetMem;
+    private Enemy targetEnemy;
     private void FixedUpdate()
     {
         Laser();
@@ -25,21 +29,19 @@ public class Tower_Laser : Tower
                 hitEffect.Stop();
 
             buffSlow.doBuff = false;
-            if(buffCoroutine != null)
-                StopCoroutine(buffCoroutine);
+            elapsedLaserTime = 0;
+            damageStep = 0;
         }
         else
         {
-            if(target != targetMem)
+            if(targetEnemy != target.GetComponent<Enemy>())
             {
-                if(buffCoroutine !=null)
-                    StopCoroutine(buffCoroutine);
-                else
-                {
-                    buffSlow.doBuff = true;
-                    buffCoroutine = StartCoroutine(BuffManager.ActiveBuff(target.GetComponent<Enemy>(), buffSlow));
-                    targetMem = target;
-                }
+                buffSlow.OnDeactive(targetEnemy);
+                buffSlow.doBuff = true;
+                buffCoroutine = StartCoroutine(BuffManager.ActiveBuff(target.GetComponent<Enemy>(), buffSlow));
+                targetEnemy = target.GetComponent<Enemy>();
+                elapsedLaserTime = 0;
+                damageStep = 0;
             }   
 
             lineRenderer.SetPosition(0, firePoint.position);
@@ -52,7 +54,27 @@ public class Tower_Laser : Tower
             Vector3 dir = (firePoint.position - target.position).normalized;
             hitEffect.transform.position = target.position + dir * 0.5f;
             hitEffect.transform.rotation = Quaternion.LookRotation(dir);
+
+            targetEnemy.hp -= (int)(damage * (1f + damageIncrementPercent / 100) * (damageStep + 1));
+
+            switch (damageStep)
+            {
+                case 0:
+                    if (elapsedLaserTime > 1) damageStep++;
+                    break;
+                case 1:
+                    if (elapsedLaserTime > 2) damageStep++;
+                    break;
+                case 2:
+                    if (elapsedLaserTime > 3) damageStep++;
+                    break;
+                default:
+                    break;
+            }
+
+            elapsedLaserTime += Time.deltaTime;
         }
     }
+
 
 }
