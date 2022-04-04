@@ -928,6 +928,11 @@ GameObject:
   - component: {fileID: 2053588837}
   - component: {fileID: 2053588836}
   - component: {fileID: 2053588838}
+  - component: {fileID: 2053588842}
+  - component: {fileID: 2053588841}
+  - component: {fileID: 2053588840}
+  - component: {fileID: 2053588839}
+  - component: {fileID: 2053588843}
   m_Layer: 20
   m_Name: Player
   m_TagString: Untagged
@@ -1039,7 +1044,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &2053588838
 MonoBehaviour:
@@ -1058,3 +1063,91 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &2053588839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053588831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356873a6d65545343b305e4b2f7a9279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  playerState: 3
+  keyCode: 0
+  animator: {fileID: 0}
+  manager: {fileID: 0}
+--- !u!114 &2053588840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053588831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5691d9d07ceeed84b8b23fe1d5b32909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  playerState: 2
+  keyCode: 273
+  animator: {fileID: 0}
+  manager: {fileID: 0}
+  jumpForce: 10
+--- !u!114 &2053588841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053588831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b97e55edf13544418c71124a7933bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  playerState: 1
+  keyCode: 0
+  animator: {fileID: 0}
+  manager: {fileID: 0}
+--- !u!114 &2053588842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053588831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13648e19018fd484285e20797ad51b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  playerState: 0
+  keyCode: 0
+  animator: {fileID: 0}
+  manager: {fileID: 0}
+--- !u!95 &2053588843
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053588831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
