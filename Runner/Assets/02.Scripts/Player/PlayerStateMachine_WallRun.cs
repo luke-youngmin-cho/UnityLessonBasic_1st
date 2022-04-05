@@ -1,27 +1,34 @@
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerStateMachine_Fall : PlayerStateMachine
+public class PlayerStateMachine_WallRun : PlayerStateMachine
 {
-    private GroundDetector groundDetector;
+    private WallDetector wallDetector;
+    private Rigidbody rb;
 
     public override void Awake()
     {
         base.Awake();
-        groundDetector = GetComponent<GroundDetector>();
+        wallDetector = GetComponentInChildren<WallDetector>();
+        rb = GetComponent<Rigidbody>();
     }
-
     public override bool IsExecuteOK()
     {
         bool isOK = false;
-        if (manager.state == PlayerState.Idle ||
-            manager.state == PlayerState.Run ||
-            manager.state == PlayerState.Jump)
+        if(wallDetector.isDetected &&
+           manager.state == PlayerState.Run ||
+           manager.state == PlayerState.Jump ||
+           manager.state == PlayerState.Fall)
             isOK = true;
         return isOK;
     }
 
+    public override void Execute()
+    {
+        base.Execute();
+        rb.isKinematic = true;
+        rb.velocity = Vector3.zero;
+    }
     public override PlayerState UpdateState()
     {
         PlayerState nextState = playerState;
@@ -30,14 +37,14 @@ public class PlayerStateMachine_Fall : PlayerStateMachine
             case State.Idle:
                 break;
             case State.Prepare:
-                animator.Play("Fall");
+                animator.Play("WallRun");                
                 state++;
                 break;
             case State.Casting:
                 state++;
                 break;
             case State.OnAction:
-                if(groundDetector.isDetected)
+                if (wallDetector.isDetected == false)
                     state++;
                 break;
             case State.Finish:
@@ -49,4 +56,9 @@ public class PlayerStateMachine_Fall : PlayerStateMachine
         return nextState;
     }
 
+    public override void ForceStop()
+    {
+        base.ForceStop();
+        rb.isKinematic = false;
+    }
 }

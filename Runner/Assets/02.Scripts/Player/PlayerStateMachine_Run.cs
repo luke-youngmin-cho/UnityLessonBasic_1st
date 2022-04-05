@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class PlayerStateMachine_Run : PlayerStateMachine
 {
-    public override bool IsExecuteOK()
-    {
-        bool isOK = false;
-        if (manager.state == PlayerState.Idle)
-            isOK = true;
-        return isOK;
-    }
-
     public override PlayerState UpdateState()
     {
         PlayerState nextPlayerState = playerState;

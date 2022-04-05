@@ -12,7 +12,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     public virtual void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         manager = GetComponent<PlayerStateMachineManager>();
     }
 
