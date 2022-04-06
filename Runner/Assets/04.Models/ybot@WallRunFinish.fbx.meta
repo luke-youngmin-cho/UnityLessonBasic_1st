@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 19f9c71cedc391c459203dda8c45d8b9
+guid: 0f124c5bb319b8842ae7179ca6d75cb3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: WallRunFinish
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -33,7 +33,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WallRunFinish
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 17
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -75,15 +104,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 966a3170cc5dfaa41b9044144c583082
-  - 2b1e4608b5064df429a86f23f91ca222
-  - 1a25f9ffcce134945a7330526223886d
-  - 8531024bbc7f9254d959e8be9c5262be
-  - d34d47a2572ebf34388a330705caf9fe
-  - 85efd94a684ed264592c7d20d892c29b
-  - 0f124c5bb319b8842ae7179ca6d75cb3
-  - 2c03bba1b16064c4a842b423e46a3a5b
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

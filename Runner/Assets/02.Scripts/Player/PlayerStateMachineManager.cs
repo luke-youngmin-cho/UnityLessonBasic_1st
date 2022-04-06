@@ -7,9 +7,63 @@ public class PlayerStateMachineManager : MonoBehaviour
     PlayerStateMachine[] playerStateMachines;
     PlayerStateMachine currentMachine;
     KeyCode keyInput;
-    
+
+    PlayerPos _playerPos;
+    PlayerPos playerPos
+    {
+        set
+        {
+            switch (value)
+            {
+                case PlayerPos.Left:
+                    switch (_playerPos)
+                    {
+                        case PlayerPos.Center:
+                            _playerPos = PlayerPos.Left;
+                            break;
+                        case PlayerPos.Right:
+                            _playerPos = PlayerPos.Center;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case PlayerPos.Center:
+                    // do active skill ? 
+                    break;
+                case PlayerPos.Right:
+                    switch (_playerPos)
+                    {
+                        case PlayerPos.Left:
+                            _playerPos = PlayerPos.Center;
+                            break;
+                        case PlayerPos.Center:
+                            _playerPos = PlayerPos.Right;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            MovePos();
+        }
+        get
+        {
+            return _playerPos;
+        }
+    }
+
+    [SerializeField] float leftPosX;
+    [SerializeField] float centerPosX;
+    [SerializeField] float rightPosX;
+
+    Transform tr;
+
     private void Awake()
     {
+        tr = transform;
         playerStateMachines = GetComponents<PlayerStateMachine>();
         foreach (var playerStateMachine in playerStateMachines)
         {
@@ -24,6 +78,24 @@ public class PlayerStateMachineManager : MonoBehaviour
         UpdateMachineState();
     }
 
+    private void MovePos()
+    {
+        switch (_playerPos)
+        {
+            case PlayerPos.Left:
+                tr.position = new Vector3(leftPosX, tr.position.y, tr.position.z);
+                break;
+            case PlayerPos.Center:
+                tr.position = new Vector3(centerPosX, tr.position.y, tr.position.z);
+                break;
+            case PlayerPos.Right:
+                tr.position = new Vector3(rightPosX, tr.position.y, tr.position.z);
+                break;
+            default:
+                break;
+        }
+    }
+
     /// <summary>
     /// 유저의 키 입력에 맞는 머신이 있는지 체크하고 
     /// 있으면 머신 실행 가능한지 체크하고
@@ -31,11 +103,17 @@ public class PlayerStateMachineManager : MonoBehaviour
     /// </summary>
     private void CompareKeyInput()
     {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            playerPos = PlayerPos.Left;
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+            playerPos = PlayerPos.Right;
+
         foreach (var machine in playerStateMachines)
         {
             if (keyInput != KeyCode.None &&
                 keyInput == machine.keyCode)
             {
+                Debug.Log($"{machine}, {machine.IsExecuteOK()}");
                 if (machine.IsExecuteOK())
                 {
                     machine.Execute();
@@ -103,4 +181,11 @@ public enum PlayerState
     Fall,
     WallRun,
     Roll,
+}
+
+public enum PlayerPos
+{
+    Left,
+    Center,
+    Right,    
 }
