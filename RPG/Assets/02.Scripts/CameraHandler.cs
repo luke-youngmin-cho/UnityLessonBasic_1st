@@ -21,6 +21,9 @@ public class CameraHandler : MonoBehaviour
         distance = Vector3.Distance(tr.position, target.position);
         x = tr.eulerAngles.y;
         y = -tr.eulerAngles.x;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()

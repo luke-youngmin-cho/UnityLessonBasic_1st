@@ -21,12 +21,19 @@ public class PlayerMove : MonoBehaviour
 
     public void SetMove(float x, float z)
     {
-        _move = new Vector3();
-        _move.x = x;
-        _move.z = z;
+        _move.x = x * moveSpeed;
+        _move.z = z * moveSpeed;
     }
+
+    public void SetMove(float y)
+    {
+        _move.y = y;
+    }
+
     public void SetMove(Vector3 move)
     {
-        _move = move;
+        _move = new Vector3(move.x * moveSpeed,
+                            move.y,
+                            move.z * moveSpeed);
     }
 }
