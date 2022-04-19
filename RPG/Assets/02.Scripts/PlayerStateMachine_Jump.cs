@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerStateMachine_Jump : PlayerStateMachine
 {
     public float deltaMove = 0.01f;
-    private CharacterController controller;
     private PlayerMove playerMove;
     
     private float detectGroundTimeLimit = 1f;
@@ -16,7 +15,6 @@ public class PlayerStateMachine_Jump : PlayerStateMachine
     public override void Awake()
     {
         base.Awake();
-        controller = GetComponent<CharacterController>();
         playerMove = GetComponent<PlayerMove>();
     }
 
@@ -24,7 +22,8 @@ public class PlayerStateMachine_Jump : PlayerStateMachine
     {
         if ((manager.playerState == PlayerState.Idle ||
              manager.playerState == PlayerState.Move) &&
-             controller.isGrounded)
+             controller.isGrounded &&
+             playerAnimator.IsClipPlaying("Movement"))
             return true;
         return false;
     }
@@ -56,8 +55,10 @@ public class PlayerStateMachine_Jump : PlayerStateMachine
             case State.OnAction:
                 if (controller.velocity.y < 0)
                     playerAnimator.SetTrigger("doFall");
-                if (controller.isGrounded)
+                if (controller.isGrounded &&
+                    playerAnimator.IsClipPlaying("Jump_Down"))
                     state++;
+                    
 
                 if (jumpUpTimer > 0)
                 {
@@ -66,8 +67,7 @@ public class PlayerStateMachine_Jump : PlayerStateMachine
                 }   
                 break;
             case State.Finish:
-                nextState = PlayerState.Idle;
-                state = State.Idle;
+                nextState = PlayerState.Move;
                 break;
             default:
                 break;

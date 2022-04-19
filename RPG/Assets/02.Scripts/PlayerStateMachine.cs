@@ -8,11 +8,22 @@ public class PlayerStateMachine : MonoBehaviour
     public State state;
     [HideInInspector] public PlayerStateMachineManager manager;
     [HideInInspector] public PlayerAnimator playerAnimator;
+    [HideInInspector] public CharacterController controller;
+
+    public bool isFinish
+    {
+        get
+        {
+            return state == State.Finish ? true : false;
+        }
+    }
+
 
     public virtual void Awake()
     {
         manager = GetComponent<PlayerStateMachineManager>();
         playerAnimator = GetComponent<PlayerAnimator>();
+        controller = GetComponent<CharacterController>();
     }
 
     public virtual bool IsExecuteOK()
