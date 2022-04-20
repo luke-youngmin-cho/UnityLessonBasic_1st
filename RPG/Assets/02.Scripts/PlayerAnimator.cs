@@ -17,11 +17,17 @@ public class PlayerAnimator : MonoBehaviour
     public float GetFloat(string name) =>
         animator.GetFloat(name);
 
+    public int GetInt(string name) =>
+        animator.GetInteger(name);
+
     public void SetTrigger(string name) =>
         animator.SetTrigger(name);
     
     public void SetFloat(string name, float value) =>
         animator.SetFloat(name, value);
+
+    public void SetInt(string name, int value) =>
+        animator.SetInteger(name, value);
 
     public void SetBool(string name, bool value) =>
         animator.SetBool(name, value);
