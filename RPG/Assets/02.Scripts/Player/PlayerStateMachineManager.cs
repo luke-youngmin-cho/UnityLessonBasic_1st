@@ -30,15 +30,24 @@ public class PlayerStateMachineManager : MonoBehaviour
     private void Update()
     {
         // movement
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        if (playerState == PlayerState.Move ||
+            playerState == PlayerState.Jump)
+        {
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
 
-        playerAnimator.SetFloat("h", h);
-        playerAnimator.SetFloat("v", v);
+            playerAnimator.SetFloat("h", h);
+            playerAnimator.SetFloat("v", v);
 
+
+            Vector3 move = cam.rotation * new Vector3(h, 0, v);
+            playerMove.SetMove(move.x, move.z);
+        }
+        else
+        {
+            playerMove.SetMove(0, 0);
+        }
         tr.rotation = Quaternion.Euler(0, cam.eulerAngles.y, 0);
-        Vector3 move = cam.rotation * new Vector3(h, 0, v);
-        playerMove.SetMove(move.x, move.z);
 
         // Jump
         if (Input.GetKey(KeyCode.Space))
