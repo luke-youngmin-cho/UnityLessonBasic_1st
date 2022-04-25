@@ -22,13 +22,13 @@ TagManager:
   - 
   - 
   - 
-  - Environment
+  - Item
+  - ItemCollision
   - 
   - 
   - 
+  - Ground
   - 
-  - 
-  - Terrain
   - Enemy
   - 
   - 
