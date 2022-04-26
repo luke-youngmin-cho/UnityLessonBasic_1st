@@ -16,7 +16,6 @@ public class ItemController : MonoBehaviour
     public float popForce;
     public float rotateSpeed;
       
-
     [Header("Kinematics")]
     private Rigidbody rb;
     private BoxCollider col;
