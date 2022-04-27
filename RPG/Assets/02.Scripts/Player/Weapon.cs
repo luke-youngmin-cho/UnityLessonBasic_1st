@@ -1,28 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Weapon : MonoBehaviour
 {
-    private float _damage;
-    public float damage
+    public LayerMask targetLayer;
+
+    private bool _doCasting;
+    public bool doCasting
     {
         set
         {
-            _damage = value;
+            if (value == false)
+            {
+                targets.Clear();
+            }
+            _doCasting = value;
         }
     }
-    public LayerMask targetLayer;
+    private Dictionary<int, GameObject> targets = new Dictionary<int, GameObject> ();
 
-    
-
-    private void OnCollisionEnter(Collision collision)
+    public List<GameObject> GetTargets()
     {
-        if (1<<collision.gameObject.layer == targetLayer)
+        return targets.Values.ToList();
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (_doCasting)
         {
-            if (collision.gameObject.TryGetComponent(out Enemy enemy))
+            if (1 << collision.gameObject.layer == targetLayer)
             {
-                enemy.Hurt(_damage);
+                if (collision.gameObject.TryGetComponent(out Enemy enemy))
+                {
+                    int hash = collision.gameObject.GetHashCode();// Object 의 고유 해시를 구하는 함수
+                    if (targets.ContainsKey(hash) == false)
+                        targets.Add(hash, collision.gameObject);
+                }
             }
         }
     }

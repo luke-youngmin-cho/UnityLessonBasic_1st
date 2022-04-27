@@ -122,11 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e2faea7b65bc6294a966985e86839aee, type: 2}
   num: 1
-  doFloatingEffect: 1
+  doFloatingEffect: 0
   floatingSpeed: 1
   floatingHeight: 0.25
-  popForce: 0
-  rotateSpeed: 0
+  popForce: 5
+  rotateSpeed: 2000
   groundLayer:
     serializedVersion: 2
     m_Bits: 2097152

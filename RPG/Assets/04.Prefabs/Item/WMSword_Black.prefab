@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1424372511646721974}
   - component: {fileID: 1424372511646721929}
   m_Layer: 16
-  m_Name: WMSword_red
+  m_Name: WMSword_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,11 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: a5897523f6085f84fa90f63fa4485ca4, type: 2}
   num: 1
-  doFloatingEffect: 1
+  doFloatingEffect: 0
   floatingSpeed: 1
   floatingHeight: 0.25
-  popForce: 0
-  rotateSpeed: 0
+  popForce: 5
+  rotateSpeed: 2000
   groundLayer:
     serializedVersion: 2
     m_Bits: 2097152
@@ -189,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e134861261e1f204ea95fae0275a545b, type: 2}
+  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
