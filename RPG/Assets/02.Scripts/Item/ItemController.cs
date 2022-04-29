@@ -35,6 +35,7 @@ public class ItemController : MonoBehaviour
         if (coroutine == null)
         {
             // to do -> 인벤토리에 아이템 추가
+            //InventoryView.instance.GetItemsView(item.type).AddItem(item, num);
             coroutine = StartCoroutine(E_PickUpEffect(player));
         }
     }

@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class InventoryView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static InventoryView instance;
+
+    [SerializeField] private InventoryItemsView itemsView_Equip;
+    [SerializeField] private InventoryItemsView itemsView_Spend;
+    [SerializeField] private InventoryItemsView itemsView_ETC;
+
+    private void Awake()
     {
-        
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public InventoryItemsView GetItemsView(ItemType itemType)
     {
-        
+        InventoryItemsView tmpView = null;
+        switch (itemType)
+        {
+            case ItemType.None:
+                break;
+            case ItemType.Equip:
+                tmpView = itemsView_Equip;
+                break;
+            case ItemType.Spend:
+                tmpView = itemsView_Spend;
+                break;
+            case ItemType.ETC:
+                tmpView = itemsView_ETC;
+                break;
+            default:
+                break;
+        }
+        return tmpView;
     }
 }
