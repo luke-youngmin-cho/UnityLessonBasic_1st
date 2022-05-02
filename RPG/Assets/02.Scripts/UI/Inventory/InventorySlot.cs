@@ -2,7 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
-    public bool isItemExist;
+    public bool isItemExist
+    {
+        get
+        {
+            return num > 0 ? true : false;
+        }
+    }
     public int id;
     public string itemName;
     public string description;
@@ -13,6 +19,7 @@ public class InventorySlot : MonoBehaviour
 
     public void SetUp(Item item, int itemNum)
     {
+        Debug.Log($"Setup Slot {item.name}, {itemNum}");
         itemName = item.name;
         description = item.description;
         num = itemNum;

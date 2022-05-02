@@ -34,8 +34,8 @@ public class ItemController : MonoBehaviour
     {
         if (coroutine == null)
         {
-            // to do -> 인벤토리에 아이템 추가
-            //InventoryView.instance.GetItemsView(item.type).AddItem(item, num);
+            int remain = InventoryView.instance.GetItemsView(item.type).AddItem(item, num);
+            Debug.Log($"플레이어가 아이템 {item.name} {num - remain} 개 획득 했습니다");
             coroutine = StartCoroutine(E_PickUpEffect(player));
         }
     }
@@ -106,8 +106,8 @@ public class ItemController : MonoBehaviour
                                            0);
 
         MeshRenderer meshRenderer = rendererTransform.GetComponent<MeshRenderer>();
-        float fadeAlpha = 1f;
-        Color fadeColor = meshRenderer.material.color;
+        //float fadeAlpha = 1f;
+        //Color fadeColor = meshRenderer.material.color;
 
         float pickUpTimer = 10f;
 
@@ -134,13 +134,13 @@ public class ItemController : MonoBehaviour
             rb.MovePosition(rb.position + moveVec * Time.deltaTime); // 선형보간하면서 rb 포지션 변경
 
             // 색변경
-            fadeAlpha -= Time.deltaTime;
-            fadeColor = new Color(fadeColor.r, fadeColor.g, fadeColor.b, fadeAlpha);
-
-            if (meshRenderer.material.GetColor("_Color") != null)
-            {
-                meshRenderer.material.SetColor("_Color", fadeColor);
-            }
+            //fadeAlpha -= Time.deltaTime;
+            //fadeColor = new Color(fadeColor.r, fadeColor.g, fadeColor.b, fadeAlpha);
+            //
+            //if (meshRenderer.material.GetColor("_Color") != null)
+            //{
+            //    meshRenderer.material.SetColor("_Color", fadeColor);
+            //}
             pickUpTimer -= Time.deltaTime;
             yield return null;
         }

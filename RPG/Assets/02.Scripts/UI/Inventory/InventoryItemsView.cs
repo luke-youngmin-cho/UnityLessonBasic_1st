@@ -16,16 +16,24 @@ public class InventoryItemsView : MonoBehaviour
 
     private void SetUp()
     {
+        InventorySlot tmpSlot = null;
         for (int i = 0; i < totalSlotNumber; i++)
         {
-            slots.Add(Instantiate(slotPrefab, content).GetComponent<InventorySlot>());
+            tmpSlot = Instantiate(slotPrefab, content).GetComponent<InventorySlot>();
+            tmpSlot.id = i;
+            slots.Add(tmpSlot);
         }
     }
 
     public int AddItem(Item item, int itemNum)
     {
+        if (itemNum <= 0) 
+            return 0;
+
         int remain = itemNum;
-        InventorySlot tmpSlot = slots.Find(x => x.itemName == item.name);
+
+        InventorySlot tmpSlot = slots.Find(x => x.itemName == item.name &&
+                                                x.num < item.numMax);
         // 동일한 아이템이 존재하면
         if (tmpSlot != null)
         {
