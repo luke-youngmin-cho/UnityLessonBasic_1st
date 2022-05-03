@@ -9,7 +9,7 @@ public class InventoryItemsView : MonoBehaviour
     public GameObject slotPrefab;
     private List<InventorySlot> slots = new List<InventorySlot>();
 
-    private void Start()
+    private void Awake()
     {
         SetUp();
     }

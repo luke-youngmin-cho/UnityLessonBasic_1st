@@ -15,6 +15,13 @@ public class InventoryView : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        itemsView_Equip.gameObject.SetActive(true);
+        itemsView_Spend.gameObject.SetActive(false);
+        itemsView_ETC.gameObject.SetActive(false);
+    }
+
     public InventoryItemsView GetItemsView(ItemType itemType)
     {
         InventoryItemsView tmpView = null;

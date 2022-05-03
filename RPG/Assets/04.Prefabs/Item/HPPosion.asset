@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac8b18e1d796b54cadd21770d0ad88f, type: 3}
+  m_Name: HPPosion
+  m_EditorClassIdentifier: 
+  type: 2
+  name: HPPosion
+  description: Hand-Made posion
+  price: 100
+  numMax: 99
+  icon: {fileID: 21300004, guid: fc49794cc535bef4f969645c4eb97b80, type: 3}

@@ -1,30 +1,104 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class InventorySlot : MonoBehaviour
+using UnityEngine.EventSystems;
+public class InventorySlot : MonoBehaviour , IPointerClickHandler
 {
     public bool isItemExist
     {
         get
         {
-            return num > 0 ? true : false;
+            return _num > 0 ? true : false;
         }
     }
-    public int id;
-    public string itemName;
-    public string description;
-    public int num;
-    public Sprite icon;
+    private int _id;
+    public int id
+    {
+        set
+        {
+            _id = value;
+        }
+
+        get
+        {
+            return _id;
+        }
+    }
+    private string _itemName;
+    public string itemName
+    {
+        get
+        {
+            return _itemName;
+        }
+    }
+    private string _description;
+    private int _num;
+    public int num
+    {
+        set
+        {
+            _num = value;
+
+            if (_num > 1)
+                _numText.text = _num.ToString();
+            else
+                _numText.text = "";
+        }
+
+        get
+        {
+            return _num;
+        }
+    }
+    private Sprite _icon;
+    public Sprite icon
+    {
+        set
+        {
+            _icon = value;
+            _image.sprite = _icon;
+        }
+
+        get
+        {
+            return _icon;
+        }
+    }
+   
 
     [SerializeField] private Image _image;
+    [SerializeField] private Text _numText;
 
     public void SetUp(Item item, int itemNum)
     {
-        Debug.Log($"Setup Slot {item.name}, {itemNum}");
-        itemName = item.name;
-        description = item.description;
-        num = itemNum;
-        icon = item.icon;
+        //Debug.Log($"Setup Slot {item.name}, {itemNum}");
 
-        _image.sprite = icon;
+        if (item != null)
+        {
+            _itemName = item.name;
+            _description = item.description;
+            num = itemNum;
+            icon = item.icon;
+        }
+        else
+            Clear();
+
+    }
+
+    public void Clear()
+    {
+        _itemName = "";
+        _description = "";
+        num = 0;
+        icon = null;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (isItemExist)
+        {
+            InventoryItemHandler.instance.SetUp(this, _icon);
+            InventoryItemHandler.instance.gameObject.SetActive(true);
+        }
     }
 }

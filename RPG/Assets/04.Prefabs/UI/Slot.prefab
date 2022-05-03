@@ -96,6 +96,7 @@ MonoBehaviour:
   num: 0
   icon: {fileID: 0}
   _image: {fileID: 1644271180339006982}
+  _numText: {fileID: 1644271179748894369}
 --- !u!1 &1644271179748894371
 GameObject:
   m_ObjectHideFlags: 0
