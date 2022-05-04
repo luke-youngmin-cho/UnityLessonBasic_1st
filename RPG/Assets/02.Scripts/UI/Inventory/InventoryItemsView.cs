@@ -32,8 +32,9 @@ public class InventoryItemsView : MonoBehaviour
 
         int remain = itemNum;
 
-        InventorySlot tmpSlot = slots.Find(x => x.itemName == item.name &&
-                                                x.num < item.numMax);
+        InventorySlot tmpSlot = slots.Find(x => x.isItemExist &&
+                                                x.item.name == item.name &&
+                                                x.num < item.numMax); ;
         // 동일한 아이템이 존재하면
         if (tmpSlot != null)
         {
@@ -53,7 +54,7 @@ public class InventoryItemsView : MonoBehaviour
                 // 빈슬롯 검색
                 tmpSlot = slots.Find(x => 
                     (x.isItemExist == false) || 
-                    ((x.itemName == item.name) && (x.num < item.numMax))
+                    ((x.item.name == item.name) && (x.num < item.numMax))
                 );
 
                 // 빈 슬롯 있으면

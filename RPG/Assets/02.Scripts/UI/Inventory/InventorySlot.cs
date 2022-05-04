@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class InventorySlot : MonoBehaviour , IPointerClickHandler
+public class InventorySlot : MonoBehaviour , IPointerDownHandler
 {
     public bool isItemExist
     {
@@ -23,15 +23,6 @@ public class InventorySlot : MonoBehaviour , IPointerClickHandler
             return _id;
         }
     }
-    private string _itemName;
-    public string itemName
-    {
-        get
-        {
-            return _itemName;
-        }
-    }
-    private string _description;
     private int _num;
     public int num
     {
@@ -50,35 +41,37 @@ public class InventorySlot : MonoBehaviour , IPointerClickHandler
             return _num;
         }
     }
-    private Sprite _icon;
-    public Sprite icon
+
+    private Item _item;
+
+    public Item item
     {
         set
         {
-            _icon = value;
-            _image.sprite = _icon;
+            _item = value;
+            if (_item != null)
+                _image.sprite = _item.icon;
+            else
+                _image.sprite = null;
         }
 
         get
         {
-            return _icon;
+            return _item;
         }
     }
-   
 
     [SerializeField] private Image _image;
     [SerializeField] private Text _numText;
 
-    public void SetUp(Item item, int itemNum)
+    public void SetUp(Item _item, int _num)
     {
         //Debug.Log($"Setup Slot {item.name}, {itemNum}");
 
-        if (item != null)
+        if (_item != null)
         {
-            _itemName = item.name;
-            _description = item.description;
-            num = itemNum;
-            icon = item.icon;
+            num = _num;
+            item = _item;
         }
         else
             Clear();
@@ -87,17 +80,16 @@ public class InventorySlot : MonoBehaviour , IPointerClickHandler
 
     public void Clear()
     {
-        _itemName = "";
-        _description = "";
+        item = null;
         num = 0;
-        icon = null;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        if (isItemExist)
+        if (isItemExist &&
+            InventoryItemHandler.instance.gameObject.activeSelf == false)
         {
-            InventoryItemHandler.instance.SetUp(this, _icon);
+            InventoryItemHandler.instance.SetUp(this, _item.icon);
             InventoryItemHandler.instance.gameObject.SetActive(true);
         }
     }

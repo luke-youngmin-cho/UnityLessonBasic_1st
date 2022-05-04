@@ -38,26 +38,41 @@ public class InventoryItemHandler : MonoBehaviour
                     {
                         // 슬롯번호와 슬롯에 있는 아이템이름 같으면 암것도 하지않음
                         if (_slot.id == slot.id &&
-                            _slot.itemName == slot.itemName )
+                            _slot.item.name == slot.item.name )
                         {
                             gameObject.SetActive(false);
                         }
                         // 캐스팅된 슬롯과 원래 슬롯을 스왑함.
                         else
                         {
-                            Item oldItem = ItemAssets.GetItem(_slot.itemName);
-                            Item newItem = ItemAssets.GetItem(slot.itemName);
-                            _slot.SetUp(newItem, slot.num);
-                            slot.SetUp(oldItem, _slot.num);
-                            gameObject.SetActive(false);
+                            Item tmpItem = slot.item;
+                            int tmpNum = slot.num;
+                            slot.SetUp(_slot.item, _slot.num);
+                            _slot.SetUp(tmpItem, tmpNum);
+
+                            Clear();
                         }
 
                         break;
                     }
                 }
-            
-            
             }
+            // 필드에 마우스 왼쪽 클릭 했으므로 아이템 드롭
+            else
+            {
+                // 드롭할 아이템 드롭
+                GameObject tmpPrefab = ItemAssets.GetItemPrefab(_slot.item.name);
+                if (tmpPrefab != null)
+                {
+                    _slot.Clear();
+                    Instantiate(tmpPrefab, Player.instance.transform.position, Quaternion.identity);
+                }   
+                Clear();
+            }
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Clear();
         }
 
     }
@@ -80,5 +95,11 @@ public class InventoryItemHandler : MonoBehaviour
     {
         _slot = slot;
         _image.sprite = icon;
+    }
+
+    public void Clear()
+    {
+        SetUp(null, null);
+        gameObject.SetActive(false);
     }
 }
