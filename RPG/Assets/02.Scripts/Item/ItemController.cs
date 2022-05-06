@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class ItemController : MonoBehaviour, IUseable
 {
     public Item item;
     public int num = 1;
@@ -41,6 +41,11 @@ public class ItemController : MonoBehaviour
                 coroutine = StartCoroutine(E_PickUpEffect(player));
         }
     }
+    public virtual void Use()
+    {
+        
+    }
+
 
     //====================================================================
     //************************** Private Methods *************************
@@ -149,5 +154,4 @@ public class ItemController : MonoBehaviour
 
         Destroy(gameObject);
     }
-
 }

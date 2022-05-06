@@ -59,11 +59,36 @@ public class Player : MonoBehaviour
 
     }
 
+    public Transform weapon1Point;
+
+    public bool EquipWeapon1(GameObject weaponPrefab)
+    {
+        UnequipWeapon1();
+        Instantiate(weaponPrefab, weapon1Point);
+        
+        return true;
+    }
+
+    public bool UnequipWeapon1()
+    {
+        if (weapon1Point.childCount > 0)
+        {
+            GameObject weapon1 = weapon1Point.GetChild(0).gameObject;
+            Item item = weapon1.GetComponent<Equipment>().item;
+            InventoryView.instance.GetItemsView(ItemType.Equip).AddItem(item, 1);
+            Destroy(weapon1);
+            return true;
+        }
+        return false;
+    }
+
     private void Awake()
     {
         instance = this;
         _hp = hpMax;
     }
+
+    
 
     private void OnTriggerStay(Collider other)
     {

@@ -31,6 +31,7 @@ public class InventoryItemHandler : MonoBehaviour
             // UI 캐스트 됨
             if (results.Count > 0)
             {
+                bool isSlotExist = false;
                 // item slot 있는지 
                 foreach (var result in results)
                 {
@@ -52,10 +53,14 @@ public class InventoryItemHandler : MonoBehaviour
 
                             Clear();
                         }
-
+                        isSlotExist = true;
                         break;
                     }
                 }
+                //슬롯 없으면
+                if (isSlotExist == false)
+                    Clear();
+
             }
             // 필드에 마우스 왼쪽 클릭 했으므로 아이템 드롭
             else

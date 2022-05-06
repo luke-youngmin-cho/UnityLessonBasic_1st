@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 1424372511646721972}
   - component: {fileID: 1424372511646721975}
   - component: {fileID: 1424372511646721974}
-  - component: {fileID: 1424372511646721929}
+  - component: {fileID: -8289309208351940709}
   m_Layer: 16
   m_Name: WMSword
   m_TagString: Untagged
@@ -108,7 +108,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1424372511646721929
+--- !u!114 &-8289309208351940709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424372511646721928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9e2cc2a5a05fdf40a749fe9f3fbf075, type: 3}
+  m_Script: {fileID: 11500000, guid: e25cfa5625c6f7b40bac6c2b3f388cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: e2faea7b65bc6294a966985e86839aee, type: 2}
@@ -130,6 +130,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 2097152
+  equipmentPrefab: {fileID: 4020212964484919258, guid: 1dc0481f55cc3db4b8a994c5d6053190,
+    type: 3}
 --- !u!1 &1424372511923681142
 GameObject:
   m_ObjectHideFlags: 0

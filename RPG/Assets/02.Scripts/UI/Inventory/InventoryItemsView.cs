@@ -78,4 +78,21 @@ public class InventoryItemsView : MonoBehaviour
         }
         return remain;
     }
+
+    public bool Remove(Item item, int itemNum)
+    {
+        if (itemNum <= 0)
+            return false;
+
+        InventorySlot tmpSlot = slots.Find(x => x.isItemExist &&
+                                                x.item.name == item.name &&
+                                                x.num >= itemNum);
+
+        if (tmpSlot != null)
+        {
+            tmpSlot.num -= itemNum;
+            return true;
+        }
+        return false;
+    }
 }

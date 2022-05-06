@@ -13,12 +13,12 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
     private int comboCount;
     private Coroutine comboCoroutine = null;
     public float damage = 10f;
-    private Weapon weapon;
+    private Weapon1 weapon;
 
     public override void Awake()
     {
         base.Awake();
-        weapon = GetComponentInChildren<Weapon>();
+        weapon = GetComponentInChildren<Weapon1>();
     }
 
     private void Start()
