@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed66278345c1dcb47a8831479fa8d763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 722c9a3f908195b4086e5e5b57505e80, type: 2}
+  item: {fileID: 11400000, guid: 30293a64912116940836738b16923862, type: 2}
   num: 68
   doFloatingEffect: 0
   floatingSpeed: 1
