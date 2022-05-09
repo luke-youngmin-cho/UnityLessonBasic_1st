@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Equipment : MonoBehaviour
 {
-    public Item item;
+    public ItemController_Equipment controller;
 }

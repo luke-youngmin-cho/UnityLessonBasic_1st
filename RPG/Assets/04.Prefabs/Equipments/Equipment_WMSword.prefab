@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9a25b2c8402454a84f16036438b29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: e2faea7b65bc6294a966985e86839aee, type: 2}
+  controller: {fileID: -8289309208351940709, guid: 1b5ead3c0f035fd42b4b0e712ccd72bf,
+    type: 3}
   targetLayer:
     serializedVersion: 2
     m_Bits: 8388608

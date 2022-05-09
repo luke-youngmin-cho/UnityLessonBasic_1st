@@ -13,13 +13,6 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
     private int comboCount;
     private Coroutine comboCoroutine = null;
     public float damage = 10f;
-    private Weapon1 weapon;
-
-    public override void Awake()
-    {
-        base.Awake();
-        weapon = GetComponentInChildren<Weapon1>();
-    }
 
     private void Start()
     {
@@ -48,7 +41,7 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
             case State.Prepare:
                 comboTimer = comboTime = GetComboTime();
                 playerAnimator.SetTrigger("doAttack");
-                weapon.doCasting = true;
+                Player.instance.weapon1.doCasting = true;
                 state++;
                 break;
             case State.Casting:
@@ -58,15 +51,15 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
                     comboCount++;
                     playerAnimator.SetInt("attackComboCount", comboCount);
 
-                    Debug.Log($"Attack : detected target count: {weapon.GetTargets().Count}");
+                    Debug.Log($"Attack : detected target count: {Player.instance.weapon1.GetTargets().Count}");
                     // 캐스팅 동안 무기에 닿은 모든 타겟 가져옴
-                    foreach (var target in weapon.GetTargets())
+                    foreach (var target in Player.instance.weapon1.GetTargets())
                     {
                         // 타겟이 에너미 이면 다치게함
                         if (target.TryGetComponent(out Enemy enemy))
                             enemy.Hurt(damage);
                     }
-                    weapon.doCasting = false;
+                    Player.instance.weapon1.doCasting = false;
                     state++;
                 }
                 break;

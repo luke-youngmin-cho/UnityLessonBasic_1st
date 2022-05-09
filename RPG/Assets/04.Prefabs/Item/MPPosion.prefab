@@ -55,9 +55,9 @@ GameObject:
   - component: {fileID: 1424372511646721972}
   - component: {fileID: 1424372511646721975}
   - component: {fileID: 1424372511646721974}
-  - component: {fileID: -6645897224870715426}
+  - component: {fileID: 2880908791914951416}
   m_Layer: 16
-  m_Name: HPPosion
+  m_Name: MPPosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6645897224870715426
+--- !u!114 &2880908791914951416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1424372511646721928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c404badfb7d18c44a17ed65e7362134, type: 3}
+  m_Script: {fileID: 11500000, guid: ed66278345c1dcb47a8831479fa8d763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 722c9a3f908195b4086e5e5b57505e80, type: 2}
@@ -189,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd0d44fb1c135a140a1d35898b0252b4, type: 2}
+  - {fileID: 2100000, guid: df0772d96ef59654380a0090bf20a11a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
