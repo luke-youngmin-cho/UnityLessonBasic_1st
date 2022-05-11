@@ -90,3 +90,11 @@ public class InventoryItemData
     public int num;
     public int slotID;
 }
+
+//[System.Serializable]
+//public struct SavePoint
+//{
+//    public int mapIdx;
+//    public float coordx;
+//    public float coordy;
+//}
