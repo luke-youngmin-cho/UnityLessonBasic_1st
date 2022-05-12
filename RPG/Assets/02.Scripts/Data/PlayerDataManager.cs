@@ -65,6 +65,19 @@ public class PlayerDataManager
             throw new System.Exception("플레이어 데이터 불러오기 실패");
     }
 
+
+    public static PlayerData[] GetAllDatas()
+    {
+        string[] jsonPaths = System.IO.Directory.GetFiles(dirPath);
+        PlayerData[] playerDatas = new PlayerData[jsonPaths.Length];
+        for (int i = 0; i < jsonPaths.Length; i++)
+        {
+            string jsonData = System.IO.File.ReadAllText(jsonPaths[i]);
+            playerDatas[i] = JsonUtility.FromJson<PlayerData>(jsonData);
+        }
+        return playerDatas;
+    }
+
     public static void SaveData()
     {
         if (data == null)
