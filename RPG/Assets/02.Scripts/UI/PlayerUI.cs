@@ -9,12 +9,24 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField] private Slider hpBar;
     [SerializeField] private Slider mpBar;
+    [SerializeField] private Slider expBar;
+    [SerializeField] private Text lvText;
+    [SerializeField] private Text nickNameText;
 
     public void SetHPBar(float value) =>
         hpBar.value = value;
 
     public void SetMPBar(float value) =>
         mpBar.value = value;
+
+    public void SetEXPBar(float value) => 
+        expBar.value = value;
+
+    public void SetLVText(string text) =>
+        lvText.text = text;
+
+    public void SetNickNameText(string text) =>
+        nickNameText.text = text;
 
     private void Awake()
     {

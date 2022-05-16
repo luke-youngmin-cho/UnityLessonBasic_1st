@@ -10,6 +10,7 @@ public class RemoveCharacterButton : MonoBehaviour
         if (tmpName != "")
         {
             PlayerDataManager.RemoveData(tmpName);
+            InventoryDataManager.RemoveData(tmpName);
             CharacterSelectionView.instance.Refresh();
         }
     }
