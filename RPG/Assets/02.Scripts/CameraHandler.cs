@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraHandler : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
     [SerializeField] private float minDistance = 3; // 카메라와 타겟간 최소거리
     [SerializeField] private float maxDistance = 30; // 카메라와 타겟간 최대거리
     [SerializeField] private float wheelSpeed = 500; // 마우스휠 속도
@@ -17,6 +17,15 @@ public class CameraHandler : MonoBehaviour
     private Transform tr;
     private void Awake()
     {
+        StartCoroutine(E_Init());
+    }
+
+    IEnumerator E_Init()
+    {
+        yield return new WaitUntil(() => Player.isReady);
+
+        target = Player.instance.transform;
+
         tr = GetComponent<Transform>();
         distance = Vector3.Distance(tr.position, target.position);
         x = tr.eulerAngles.y;

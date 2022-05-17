@@ -1,14 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerData
+/// <summary>
+/// 플레이어의 이름과 스텟 데이터
+/// </summary>
+public class PlayerData // 단지 데이터 처리용 클래스이기 떄문에 Monobehavior 상속받을 필요 없다. 
 {
     public string nickName;
     public Stats stats;
     
-
-    public PlayerData(string newNickName)
+    /// <summary>
+    /// 스텟 초기화 
+    /// todo -> 나중에 스텟을 위한 테이블을 참조하는 형태로 수정해야함.
+    /// </summary>
+    /// <param name="newNickName"> 생성할 캐릭터 이름 </param>
+    public PlayerData(string newNickName) // Monobehavior 를 상속받지 않았기 때문에 생성자 사용 가능.
     {
         nickName = newNickName;
         stats = new Stats()
@@ -37,7 +40,7 @@ public class PlayerData
     
 }
 
-[System.Serializable]
+[System.Serializable] // json 포맷 등으로 직렬화/역직렬화 할 수 있게 하기위한 속성
 public class Stats
 {
     public int LV;

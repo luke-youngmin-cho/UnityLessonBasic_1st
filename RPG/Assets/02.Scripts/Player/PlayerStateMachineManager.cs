@@ -6,7 +6,7 @@ public class PlayerStateMachineManager : MonoBehaviour
 {
     public PlayerState playerState;
 
-    [SerializeField] private Transform cam;
+    private Transform cam;
     private Transform tr;
     private PlayerMove playerMove;
     private PlayerAnimator playerAnimator;
@@ -26,9 +26,15 @@ public class PlayerStateMachineManager : MonoBehaviour
         currentMachine = machines[0];        
     }
 
+    private void Start()
+    {
+        cam = Camera.main.transform;
+    }
 
     private void Update()
     {
+        if (cam != null)
+
         // movement
         if (playerState == PlayerState.Move ||
             playerState == PlayerState.Jump)
