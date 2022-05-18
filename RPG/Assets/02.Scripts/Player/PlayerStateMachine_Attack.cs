@@ -24,7 +24,8 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
     public override bool IsExecuteOK()
     {
         if (comboCount == 0 && 
-            (manager.playerState == PlayerState.Move && 
+            (manager.playerState == PlayerState.Move &&
+             Player.instance.weapon1 != null &&
              playerAnimator.IsClipPlaying("Movement")))
             return true;
         return false;

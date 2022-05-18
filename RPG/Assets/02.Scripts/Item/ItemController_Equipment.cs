@@ -2,11 +2,13 @@
 
 public class ItemController_Equipment : ItemController, IUseable
 {
+    public EquipmentType equipmentType;
     public GameObject equipmentPrefab;
 
     public virtual void Use()
     {
         InventoryView.instance.GetItemsView(ItemType.Equip).Remove(item, 1);
+        Player.instance.Equip(equipmentType, equipmentPrefab);
     }
 
     public override void PickUp(Player player)
@@ -20,4 +22,15 @@ public class ItemController_Equipment : ItemController, IUseable
                 coroutine = StartCoroutine(E_PickUpEffect(player));
         }
     }
+}
+
+public enum EquipmentType
+{
+    Head,
+    Body,
+    Foot,
+    Weapon1,
+    Weapon2,
+    Ring,
+    Necklace
 }

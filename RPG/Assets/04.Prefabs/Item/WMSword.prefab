@@ -130,6 +130,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 2097152
+  equipmentType: 3
   equipmentPrefab: {fileID: 4020212964484919258, guid: 1dc0481f55cc3db4b8a994c5d6053190,
     type: 3}
 --- !u!1 &1424372511923681142

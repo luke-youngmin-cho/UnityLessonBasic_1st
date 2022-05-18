@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3733788902640674375}
-  - component: {fileID: 3733788902648416257}
   - component: {fileID: 5168165226473955313}
   - component: {fileID: 3733788902641039910}
   - component: {fileID: 5168165226473955318}
@@ -40,25 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &3733788902648416257
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3733788902641039911}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
-  m_Controller: {fileID: 9100000, guid: ccce649054995c741a17d156da28f4bf, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!143 &5168165226473955313
 CharacterController:
   m_ObjectHideFlags: 0
@@ -90,7 +70,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: 0
-  cam: {fileID: 0}
 --- !u!114 &5168165226473955318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544f8cdf07d5aec489f10739a35b16e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    LV: 0
+    EXP: 0
+    STR: 0
+    DEX: 0
+    INT: 0
+    LUK: 0
+    HP: 0
+    HPMax: 0
+    MP: 0
+    MPMax: 0
+    ATK: 0
+    DEF: 0
+    statPoint: 0
   hpMax: 1000
   mpMax: 100
   weapon1Point: {fileID: 5168165226633228487}
@@ -246,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ccce649054995c741a17d156da28f4bf, type: 2}
+    - target: {fileID: 9500000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5674d01884853d4e8f2386a171e14d9, type: 3}
 --- !u!4 &5168165226633230095 stripped

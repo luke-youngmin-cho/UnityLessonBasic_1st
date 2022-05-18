@@ -105,9 +105,15 @@ public class Player : MonoBehaviour
         {
             return _lv;
         }
-    }    
+    }
 
+    public Transform headPoint;
+    public Transform bodyPoint;
+    public Transform footPoint;
     public Transform weapon1Point;
+    public Transform weapon2Point;
+    public Transform ringPoint;
+    public Transform necklacePoint;
 
     [Header("장비")]
     public Weapon1 weapon1;
@@ -126,23 +132,29 @@ public class Player : MonoBehaviour
         isReady = true;
     }
 
-    public bool EquipWeapon1(GameObject weaponPrefab)
+    public bool Equip(EquipmentType equipmentType, GameObject equipmentPrefab)
     {
-        UnequipWeapon1();
-        weapon1 = Instantiate(weaponPrefab, weapon1Point).GetComponent<Weapon1>();
-        
+        Unequip(equipmentType);
+        GameObject equipment = Instantiate(equipmentPrefab,
+                                           GetEquipPoint(equipmentType));
+
+        SetEquipmentInstance(equipmentType, equipment);
         return true;
     }
 
-    public bool UnequipWeapon1()
+    public bool Unequip(EquipmentType equipmentType)
     {
-        if (weapon1Point.childCount > 0)
+        if (CheckIsEquipmentExist(equipmentType))
         {
-            GameObject weapon1 = weapon1Point.GetChild(0).gameObject;
-            ItemController_Equipment controller = weapon1.GetComponent<Equipment>().controller;
-            InventoryView.instance.GetItemsView(ItemType.Equip).AddItem(controller.item, 1, controller.Use);
-            Destroy(weapon1);
-            return true;
+            GameObject equipment = GetEquipPoint(equipmentType).GetChild(0).gameObject;
+            ItemController_Equipment controller = equipment.GetComponent<Equipment>().controller;
+            int remain = InventoryView.instance.GetItemsView(ItemType.Equip).AddItem(controller.item, 1, controller.Use);
+            // 장비 해제 성공
+            if (remain <= 0)
+            {
+                Destroy(equipment);
+                return true;
+            }
         }
         return false;
     }
@@ -159,6 +171,76 @@ public class Player : MonoBehaviour
     private float GetEXPRequired(int level)
     {
         return 1000 + (Mathf.Pow(Mathf.Exp(1), level)) * 10;
+    }
+
+    private Transform GetEquipPoint(EquipmentType equipmentType)
+    {
+        switch (equipmentType)
+        {
+            case EquipmentType.Head:
+                return headPoint;
+            case EquipmentType.Body:
+                return bodyPoint;
+            case EquipmentType.Foot:
+                return footPoint;
+            case EquipmentType.Weapon1:
+                return weapon1Point;
+            case EquipmentType.Weapon2:
+                return weapon2Point;
+            case EquipmentType.Ring:
+                return ringPoint;
+            case EquipmentType.Necklace:
+                return necklacePoint;
+            default:
+                throw new System.Exception("치명적인문제! : 잘못된 장비 타입을 가져오려고 시도했습니다");
+        }
+    }
+
+    private void SetEquipmentInstance(EquipmentType equipmentType, GameObject instance)
+    {
+        switch (equipmentType)
+        {
+            case EquipmentType.Head:
+                break;
+            case EquipmentType.Body:
+                break;
+            case EquipmentType.Foot:
+                break;
+            case EquipmentType.Weapon1:
+                weapon1 = instance.GetComponent<Weapon1>();
+                break;
+            case EquipmentType.Weapon2:
+                break;
+            case EquipmentType.Ring:
+                break;
+            case EquipmentType.Necklace:
+                break;
+            default:
+                break;
+        }
+    }
+
+    private bool CheckIsEquipmentExist(EquipmentType equipmentType)
+    {
+        switch (equipmentType)
+        {
+            case EquipmentType.Head:
+                return headPoint.childCount > 0 ? true : false;
+            case EquipmentType.Body:
+                return bodyPoint.childCount > 0 ? true : false;
+            case EquipmentType.Foot:
+                return footPoint.childCount > 0 ? true : false;
+            case EquipmentType.Weapon1:
+                return weapon1Point.childCount > 0 ? true : false;
+            case EquipmentType.Weapon2:
+                return weapon2Point.childCount > 0 ? true : false;
+            case EquipmentType.Ring:
+                return ringPoint.childCount > 0 ? true : false;
+            case EquipmentType.Necklace:
+                return necklacePoint.childCount > 0 ? true : false;
+            default:
+                throw new System.Exception("치명적인오류! : 잘못된 장비 정보를 가져오려고 시도함");
+        }
     }
 
     private void OnTriggerStay(Collider other)
