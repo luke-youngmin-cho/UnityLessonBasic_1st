@@ -139,6 +139,8 @@ public class Player : MonoBehaviour
                                            GetEquipPoint(equipmentType));
 
         SetEquipmentInstance(equipmentType, equipment);
+        EquipmentsView.instance.SetSlot(equipmentType,
+                                        equipmentPrefab.GetComponent<Equipment>().controller.item);
         return true;
     }
 

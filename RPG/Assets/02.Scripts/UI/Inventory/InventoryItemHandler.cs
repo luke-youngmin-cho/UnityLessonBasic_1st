@@ -19,7 +19,8 @@ public class InventoryItemHandler : MonoBehaviour
     private void Update()
     {
         // 마우스 왼쪽버튼
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (_slot !=null &&
+            Input.GetKeyDown(KeyCode.Mouse0))
         {
             // 발생할 이벤트에 대한 마우스 이벤트 데이터
             _pointerEventData = new PointerEventData(_eventSystem); // 현재 이벤트들에서 마우스 이벤트 데이터만 따로 생성
@@ -32,9 +33,10 @@ public class InventoryItemHandler : MonoBehaviour
             if (results.Count > 0)
             {
                 bool isSlotExist = false;
-                // item slot 있는지 
+                
                 foreach (var result in results)
                 {
+                    // item slot 있는지 
                     if (result.gameObject.TryGetComponent(out InventorySlot slot))
                     {
                         // 슬롯번호와 슬롯에 있는 아이템이름 같으면 암것도 하지않음
@@ -56,6 +58,20 @@ public class InventoryItemHandler : MonoBehaviour
                         }
                         isSlotExist = true;
                         break;
+                    }
+
+                    // EquipmentSlot 있는지
+                    if (_slot.item.type == ItemType.Equip &&
+                        result.gameObject.TryGetComponent(out EquipmentSlot equipmentSlot) )
+                    {                        
+                        if (ItemAssets.GetItemPrefab(_slot.item.name).TryGetComponent(out ItemController_Equipment controller))
+                        {
+                            // 동일한 종류의 장비를 장착하려고 한건지 체크
+                            if (equipmentSlot.equipmentType == controller.equipmentType)
+                            {
+                                _slot._OnUse();
+                            }
+                        }
                     }
                 }
                 //슬롯 없으면

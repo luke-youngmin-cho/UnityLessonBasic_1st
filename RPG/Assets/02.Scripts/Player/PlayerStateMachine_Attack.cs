@@ -46,8 +46,8 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
                 state++;
                 break;
             case State.Casting:
-                
-                if (playerAnimator.IsClipPlaying(GetClipName()))
+                if (playerAnimator.IsClipPlaying(GetClipName()) &&
+                    comboTimer < GetComboTime() / 1.5)
                 {
                     comboCount++;
                     playerAnimator.SetInt("attackComboCount", comboCount);
@@ -63,6 +63,8 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
                     Player.instance.weapon1.doCasting = false;
                     state++;
                 }
+                else
+                    comboTimer -= Time.deltaTime;
                 break;
             case State.OnAction:
 
@@ -71,14 +73,14 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
 
                 if (Input.GetMouseButton(0))
                 {
-                    if (comboTimer < 0.6f && 
+                    if (comboTimer < GetComboTime() / 1.9 && 
                         comboCount < 3)
                     {
                         state = State.Prepare;
                     }
                 }
 
-                if (comboTimer < 0.5f)
+                if (comboTimer < GetComboTime() / 2)
                 {
                     if (state != State.Prepare)
                     {

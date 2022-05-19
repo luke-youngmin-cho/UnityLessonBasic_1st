@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class EquipmentSlot : MonoBehaviour, IPointerDownHandler
 {
+    public EquipmentType equipmentType;
     public bool isItemExist
     {
         get
@@ -66,7 +67,10 @@ public class EquipmentSlot : MonoBehaviour, IPointerDownHandler
             }
             else if (eventData.button == PointerEventData.InputButton.Right)
             {
-                
+                if (Player.instance.Unequip(equipmentType))
+                {
+                    Clear();
+                }
             }
         }
     }
