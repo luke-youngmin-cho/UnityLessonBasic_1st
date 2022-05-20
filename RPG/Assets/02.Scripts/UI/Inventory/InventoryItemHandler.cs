@@ -8,18 +8,35 @@ public class InventoryItemHandler : MonoBehaviour
     public static InventoryItemHandler instance;
 
     public Image _image;
-
     private InventorySlot _slot;
-
     private GraphicRaycaster _graphicRaycaster; // UI 레이캐스팅 하는 컴포넌트
     private PointerEventData _pointerEventData; // 마우스 이벤트 데이터 
     private EventSystem _eventSystem; // 이벤트를 처리하는 객체
 
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(instance.gameObject);
+        instance = this;
+        gameObject.SetActive(false);
+        _graphicRaycaster = transform.parent.GetComponent<GraphicRaycaster>();
+        _eventSystem = transform.parent.GetComponent<EventSystem>();
+    }
+
+    private void OnEnable()
+    {
+        CursorHandler.controllable = false;
+    }
+
+    private void OnDisable()
+    {
+        CursorHandler.controllable = true;
+    }
 
     private void Update()
     {
         // 마우스 왼쪽버튼
-        if (_slot !=null &&
+        if (_slot != null &&
             Input.GetKeyDown(KeyCode.Mouse0))
         {
             // 발생할 이벤트에 대한 마우스 이벤트 데이터
@@ -61,10 +78,12 @@ public class InventoryItemHandler : MonoBehaviour
                     }
 
                     // EquipmentSlot 있는지
-                    if (_slot.item.type == ItemType.Equip &&
+                    if (_slot.item != null &&
+                        _slot.item.type == ItemType.Equip &&
                         result.gameObject.TryGetComponent(out EquipmentSlot equipmentSlot) )
                     {                        
-                        if (ItemAssets.GetItemPrefab(_slot.item.name).TryGetComponent(out ItemController_Equipment controller))
+                        if (ItemAssets.GetItemPrefab(_slot.item.name)
+                            .TryGetComponent(out ItemController_Equipment controller))
                         {
                             // 동일한 종류의 장비를 장착하려고 한건지 체크
                             if (equipmentSlot.equipmentType == controller.equipmentType)
@@ -98,15 +117,7 @@ public class InventoryItemHandler : MonoBehaviour
         }
 
     }
-    private void Awake()
-    {
-        if (instance != null)
-            Destroy(instance.gameObject);
-        instance = this;
-        gameObject.SetActive(false);
-        _graphicRaycaster = transform.parent.GetComponent<GraphicRaycaster>();
-        _eventSystem = transform.parent.GetComponent<EventSystem>();
-    }
+   
 
     private void FixedUpdate()
     {

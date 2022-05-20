@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryItemsView : MonoBehaviour
 {
+    public ItemType itemType;
     public Transform content;
     public int totalSlotNumber = 12;
     public GameObject slotPrefab;
@@ -21,6 +22,7 @@ public class InventoryItemsView : MonoBehaviour
         {
             tmpSlot = Instantiate(slotPrefab, content).GetComponent<InventorySlot>();
             tmpSlot.id = i;
+            tmpSlot.itemType = itemType;
             slots.Add(tmpSlot);
         }
     }

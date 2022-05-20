@@ -52,7 +52,7 @@ public class CameraHandler : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(target == null) return;
+        if (target == null) return;
 
         tr.position = tr.rotation * new Vector3(0, 0, -distance) + target.position;
     }

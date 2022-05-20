@@ -67,26 +67,27 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
                     comboTimer -= Time.deltaTime;
                 break;
             case State.OnAction:
-
                 // 마우스입력 들어오면 그다음 콤보 실행 
                 // 안들어오면 무브먼트로 돌아감
 
                 if (Input.GetMouseButton(0))
                 {
-                    if (comboTimer < GetComboTime() / 1.9 && 
-                        comboCount < 3)
+                    if (comboCount < 3 &&
+                        comboTimer < GetComboTime() * 0.2f)
                     {
                         state = State.Prepare;
                     }
                 }
 
-                if (comboTimer < GetComboTime() / 2)
+                if (comboTimer < 0)
                 {
                     if (state != State.Prepare)
                     {
                         state++;
                     }   
                 }
+
+                comboTimer -= Time.deltaTime;
                 break;
             case State.Finish:
                 nextState = PlayerState.Move;

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour , IPointerDownHandler
 {
+    [HideInInspector] public ItemType itemType;
     public bool isItemExist
     {
         get
