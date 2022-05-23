@@ -109,7 +109,8 @@ public class Player : MonoBehaviour
 
     public Transform headPoint;
     public Transform bodyPoint;
-    public Transform footPoint;
+    public Transform leftFootPoint;
+    public Transform rightFootPoint;
     public Transform weapon1Point;
     public Transform weapon2Point;
     public Transform ringPoint;
@@ -117,6 +118,13 @@ public class Player : MonoBehaviour
 
     [Header("장비")]
     public Weapon1 weapon1;
+    public Weapon2 weapon2;
+    public Head head;
+    public Body body;
+    public Foot leftFoot;
+    public Foot rightFoot;
+    public Ring ring;
+    public Necklace necklace;
 
 
     public void SetUp(PlayerData data)
@@ -135,10 +143,35 @@ public class Player : MonoBehaviour
     public bool Equip(EquipmentType equipmentType, GameObject equipmentPrefab)
     {
         Unequip(equipmentType);
-        GameObject equipment = Instantiate(equipmentPrefab,
-                                           GetEquipPoint(equipmentType));
+       
+        switch (equipmentType)
+        {
+            case EquipmentType.Head:
+                head = Instantiate(equipmentPrefab, headPoint).GetComponent<Head>();
+                break;
+            case EquipmentType.Body:
+                body = Instantiate(equipmentPrefab, bodyPoint).GetComponent<Body>();
+                break;
+            case EquipmentType.Foot:
+                leftFoot = Instantiate(equipmentPrefab, leftFootPoint).GetComponent<Foot>();
+                rightFoot = Instantiate(equipmentPrefab, rightFootPoint).GetComponent<Foot>();
+                break;
+            case EquipmentType.Weapon1:
+                weapon1 = Instantiate(equipmentPrefab, weapon1Point).GetComponent<Weapon1>();
+                break;
+            case EquipmentType.Weapon2:
+                weapon2 = Instantiate(equipmentPrefab, weapon2Point).GetComponent<Weapon2>();
+                break;
+            case EquipmentType.Ring:
+                ring = Instantiate(equipmentPrefab, ringPoint).GetComponent<Ring>();
+                break;
+            case EquipmentType.Necklace:
+                necklace = Instantiate(equipmentPrefab, necklacePoint).GetComponent<Necklace>();
+                break;
+            default:
+                break;
+        }
 
-        SetEquipmentInstance(equipmentType, equipment);
         EquipmentsView.instance.SetSlot(equipmentType,
                                         equipmentPrefab.GetComponent<Equipment>().controller.item);
         return true;
@@ -148,13 +181,43 @@ public class Player : MonoBehaviour
     {
         if (CheckIsEquipmentExist(equipmentType))
         {
-            GameObject equipment = GetEquipPoint(equipmentType).GetChild(0).gameObject;
+            GameObject equipment = null;
+            switch (equipmentType)
+            {
+                case EquipmentType.Head:
+                    equipment = headPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Body:
+                    equipment = bodyPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Foot:
+                    equipment = leftFootPoint.GetChild(0).gameObject; 
+                    break;
+                case EquipmentType.Weapon1:
+                    equipment = weapon1Point.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Weapon2:
+                    equipment = weapon2Point.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Ring:
+                    equipment = ringPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Necklace:
+                    equipment = necklacePoint.GetChild(0).gameObject;
+                    break;
+                default:
+                    break;
+            }
+
             ItemController_Equipment controller = equipment.GetComponent<Equipment>().controller;
             int remain = InventoryView.instance.GetItemsView(ItemType.Equip).AddItem(controller.item, 1, controller.Use);
             // 장비 해제 성공
             if (remain <= 0)
             {
                 Destroy(equipment);
+                if (equipmentType == EquipmentType.Foot)
+                    Destroy(rightFootPoint.GetChild(0).gameObject);
+
                 return true;
             }
         }
@@ -165,7 +228,33 @@ public class Player : MonoBehaviour
     {
         if (CheckIsEquipmentExist(equipmentType))
         {
-            GameObject equipment = GetEquipPoint(equipmentType).GetChild(0).gameObject;
+            GameObject equipment = null;
+            switch (equipmentType)
+            {
+                case EquipmentType.Head:
+                    equipment = headPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Body:
+                    equipment = bodyPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Foot:
+                    equipment = leftFootPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Weapon1:
+                    equipment = weapon1Point.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Weapon2:
+                    equipment = weapon2Point.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Ring:
+                    equipment = ringPoint.GetChild(0).gameObject;
+                    break;
+                case EquipmentType.Necklace:
+                    equipment = necklacePoint.GetChild(0).gameObject;
+                    break;
+                default:
+                    break;
+            }
             ItemController_Equipment controller = equipment.GetComponent<Equipment>().controller;
             if (slot.isItemExist == false)
             {
@@ -190,53 +279,6 @@ public class Player : MonoBehaviour
         return 1000 + (Mathf.Pow(Mathf.Exp(1), level)) * 10;
     }
 
-    private Transform GetEquipPoint(EquipmentType equipmentType)
-    {
-        switch (equipmentType)
-        {
-            case EquipmentType.Head:
-                return headPoint;
-            case EquipmentType.Body:
-                return bodyPoint;
-            case EquipmentType.Foot:
-                return footPoint;
-            case EquipmentType.Weapon1:
-                return weapon1Point;
-            case EquipmentType.Weapon2:
-                return weapon2Point;
-            case EquipmentType.Ring:
-                return ringPoint;
-            case EquipmentType.Necklace:
-                return necklacePoint;
-            default:
-                throw new System.Exception("치명적인문제! : 잘못된 장비 타입을 가져오려고 시도했습니다");
-        }
-    }
-
-    private void SetEquipmentInstance(EquipmentType equipmentType, GameObject instance)
-    {
-        switch (equipmentType)
-        {
-            case EquipmentType.Head:
-                break;
-            case EquipmentType.Body:
-                break;
-            case EquipmentType.Foot:
-                break;
-            case EquipmentType.Weapon1:
-                weapon1 = instance.GetComponent<Weapon1>();
-                break;
-            case EquipmentType.Weapon2:
-                break;
-            case EquipmentType.Ring:
-                break;
-            case EquipmentType.Necklace:
-                break;
-            default:
-                break;
-        }
-    }
-
     private bool CheckIsEquipmentExist(EquipmentType equipmentType)
     {
         switch (equipmentType)
@@ -246,7 +288,7 @@ public class Player : MonoBehaviour
             case EquipmentType.Body:
                 return bodyPoint.childCount > 0 ? true : false;
             case EquipmentType.Foot:
-                return footPoint.childCount > 0 ? true : false;
+                return leftFootPoint.childCount > 0 ? true : false;
             case EquipmentType.Weapon1:
                 return weapon1Point.childCount > 0 ? true : false;
             case EquipmentType.Weapon2:

@@ -13,6 +13,9 @@ public class InventoryItemHandler : MonoBehaviour
     private PointerEventData _pointerEventData; // 마우스 이벤트 데이터 
     private EventSystem _eventSystem; // 이벤트를 처리하는 객체
 
+
+    private Coroutine _coroutine;
+
     private void Awake()
     {
         if (instance != null)
@@ -37,7 +40,8 @@ public class InventoryItemHandler : MonoBehaviour
     {
         // 마우스 왼쪽버튼
         if (_slot != null &&
-            Input.GetKeyDown(KeyCode.Mouse0))
+            Input.GetKeyDown(KeyCode.Mouse0) &&
+            EquipmentHandler.instance.gameObject.activeSelf == false)
         {
             // 발생할 이벤트에 대한 마우스 이벤트 데이터
             _pointerEventData = new PointerEventData(_eventSystem); // 현재 이벤트들에서 마우스 이벤트 데이터만 따로 생성
@@ -49,8 +53,6 @@ public class InventoryItemHandler : MonoBehaviour
             // UI 캐스트 됨
             if (results.Count > 0)
             {
-                bool isSlotExist = false;
-                
                 foreach (var result in results)
                 {
                     // item slot 있는지 
@@ -60,7 +62,8 @@ public class InventoryItemHandler : MonoBehaviour
                         if (_slot.id == slot.id &&
                             _slot.item.name == slot.item.name )
                         {
-                            gameObject.SetActive(false);
+                            Clear();
+                            return;
                         }
                         // 캐스팅된 슬롯과 원래 슬롯을 스왑함.
                         else
@@ -72,9 +75,8 @@ public class InventoryItemHandler : MonoBehaviour
                             _slot.SetUp(tmpItem, tmpNum, tmpOnUse);
 
                             Clear();
+                            return;
                         }
-                        isSlotExist = true;
-                        break;
                     }
 
                     // EquipmentSlot 있는지
@@ -89,14 +91,12 @@ public class InventoryItemHandler : MonoBehaviour
                             if (equipmentSlot.equipmentType == controller.equipmentType)
                             {
                                 _slot._OnUse();
+                                Clear();
+                                return;
                             }
                         }
                     }
                 }
-                //슬롯 없으면
-                if (isSlotExist == false)
-                    Clear();
-
             }
             // 필드에 마우스 왼쪽 클릭 했으므로 아이템 드롭
             else
@@ -133,6 +133,14 @@ public class InventoryItemHandler : MonoBehaviour
     public void Clear()
     {
         SetUp(null, null);
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
+        _coroutine = StartCoroutine(E_DeactiveAfterEndOfFrame());
+    }
+
+    private IEnumerator E_DeactiveAfterEndOfFrame()
+    {
+        yield return new WaitForEndOfFrame();
         gameObject.SetActive(false);
     }
 }
