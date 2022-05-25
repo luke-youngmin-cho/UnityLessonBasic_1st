@@ -8,6 +8,7 @@ using UnityEngine;
 public class InventoryData
 {
     public List<InventoryItemData> items; // 인벤토리 내의 아이템들
+    public List<EquipmentItemData> equipItems; // 장착중인 아이템들
 
     /// <summary>
     /// 리스트 초기화
@@ -15,6 +16,7 @@ public class InventoryData
     public InventoryData()
     {
         items = new List<InventoryItemData>();
+        equipItems = new List<EquipmentItemData>();
     }
 
     /// <summary>
@@ -57,16 +59,40 @@ public class InventoryData
             items.Remove(oldData);
         }
     }
+
+    /// <summary>
+    /// 장비하고있는 아이템 데이터 세팅 함수
+    /// </summary>
+    /// <param name="type"> 장비 종류 </param>
+    /// <param name="itemName"> 장비 아이템 이름 </param>
+    public void SetEquipmentItemData(EquipmentType type, string itemName)
+    {
+        EquipmentItemData tmpData = equipItems.Find(x => x.type == type);
+        if (tmpData != null)
+        {
+            tmpData.type = type;
+            tmpData.itemName = itemName;
+        }
+        else
+        {
+            tmpData = new EquipmentItemData()
+            {
+                type = type,
+                itemName = itemName
+            };
+        }
+    }
+
+    /// <summary>
+    /// 장비아이템을 장착 해제했을때 호출해서 기존에 장착 데이터를 삭제함
+    /// </summary>
+    /// <param name="type"> 장비 종류 </param>
+    public void RemoveEquipmentItemData(EquipmentType type)
+    {
+        EquipmentItemData tmpData = equipItems.Find(x => x.type == type);
+
+        if (tmpData != null)
+            equipItems.Remove(tmpData);
+    }
 }
 
-/// <summary>
-/// 아이템 객체 자체를 저장하면 너무 크기때문에 데이터를 최소화해서 저장하기위해 새로 만든 아이템 데이터관리용 클래스
-/// </summary>
-[System.Serializable]
-public class InventoryItemData
-{
-    public ItemType type; // (장비, 소비, 기타)
-    public string itemName; // 이름
-    public int num; // 보유 갯수
-    public int slotID; // 해당 아이템이 존재하는 슬롯 번호
-}

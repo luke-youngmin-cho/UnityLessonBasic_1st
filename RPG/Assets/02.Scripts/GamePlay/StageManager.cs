@@ -49,7 +49,8 @@ public class StageManager : MonoBehaviour
                                      playerSpawnPoint.position, 
                                      Quaternion.identity).GetComponent<Player>();
                 player.SetUp(PlayerDataManager.data);
-                InventoryView.instance.SetUp(InventoryDataManager.data);
+                InventoryView.instance.SetUp(InventoryDataManager.data.items);
+                EquipmentsView.instance.SetUp(InventoryDataManager.data.equipItems);
                 Next();
                 break;
             // 플레이어 및 인벤토리 세팅 끝날때 까지 기다림

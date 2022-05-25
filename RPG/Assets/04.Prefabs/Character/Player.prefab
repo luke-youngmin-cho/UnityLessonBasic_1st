@@ -142,14 +142,22 @@ MonoBehaviour:
     statPoint: 0
   hpMax: 1000
   mpMax: 100
-  headPoint: {fileID: 0}
-  bodyPoint: {fileID: 0}
-  footPoint: {fileID: 0}
+  headPoint: {fileID: 8695400170862235360}
+  bodyPoint: {fileID: 6709772391850198154}
+  leftFootPoint: {fileID: 3528980231436115391}
+  rightFootPoint: {fileID: 9129892087230189606}
   weapon1Point: {fileID: 5168165226633228487}
-  weapon2Point: {fileID: 0}
+  weapon2Point: {fileID: 5168165226633228465}
   ringPoint: {fileID: 0}
   necklacePoint: {fileID: 0}
   weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
+  head: {fileID: 0}
+  body: {fileID: 0}
+  leftFoot: {fileID: 0}
+  rightFoot: {fileID: 0}
+  ring: {fileID: 0}
+  necklace: {fileID: 0}
 --- !u!114 &3733788902641039904
 MonoBehaviour:
   m_ObjectHideFlags: 0

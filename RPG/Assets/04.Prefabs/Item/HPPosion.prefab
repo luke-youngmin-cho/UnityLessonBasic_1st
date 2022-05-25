@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 722c9a3f908195b4086e5e5b57505e80, type: 2}
   num: 68
-  doFloatingEffect: 0
+  doFloatingEffect: 1
   floatingSpeed: 1
   floatingHeight: 0.25
   popForce: 5
