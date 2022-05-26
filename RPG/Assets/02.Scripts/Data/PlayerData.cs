@@ -45,20 +45,16 @@ public class Stats
 {
     public int LV;
     public int EXP;
-
     public int STR;
     public int DEX;
     public int INT;
     public int LUK;
-
-    public int HP;
-    public int HPMax;
-    public int MP;
-    public int MPMax;
-
+    public int HP;    
+    public int MP;        
     public int ATK;
     public int DEF;
-
+    public int HPMax;
+    public int MPMax;
     public int statPoint;
 }
 

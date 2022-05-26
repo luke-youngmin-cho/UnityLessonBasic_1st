@@ -7,7 +7,39 @@ public class Player : MonoBehaviour
     public static Player instance;
     public static bool isReady;
 
-    public Stats stats;
+    private Stats _stats;
+    public Stats stats
+    {
+        set
+        {
+            _stats = value;
+
+            if (StatsView.instance.gameObject.activeSelf)
+                StatsView.instance.Refresh();
+        }
+        get
+        {
+            return _stats;
+        }
+    }
+
+    private Stats _additionalStats;
+    public Stats additionalStats
+    {
+        set
+        {
+            _additionalStats = value;
+
+            if (StatsView.instance.gameObject.activeSelf)
+                StatsView.instance.Refresh();
+        }
+        get
+        {
+            return _additionalStats;
+        }
+    }
+
+
     public float hpMax;
     private float _hp;
     public float hp
@@ -137,6 +169,8 @@ public class Player : MonoBehaviour
         lv = stats.LV;
         exp = stats.EXP;
 
+        additionalStats = new Stats();
+        Debug.Log("Set player up");
         isReady = true;
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 인벤토리의 아이템들 데이터
 /// </summary>
+[System.Serializable]
 public class InventoryData
 {
     public List<InventoryItemData> items; // 인벤토리 내의 아이템들
@@ -68,6 +69,7 @@ public class InventoryData
     public void SetEquipmentItemData(EquipmentType type, string itemName)
     {
         EquipmentItemData tmpData = equipItems.Find(x => x.type == type);
+
         if (tmpData != null)
         {
             tmpData.type = type;
@@ -80,6 +82,7 @@ public class InventoryData
                 type = type,
                 itemName = itemName
             };
+            equipItems.Add(tmpData);
         }
     }
 
