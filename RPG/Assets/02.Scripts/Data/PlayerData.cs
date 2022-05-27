@@ -56,6 +56,34 @@ public class Stats
     public int HPMax;
     public int MPMax;
     public int statPoint;
+
+    // 연산자 오버로딩
+    public static Stats operator +(Stats stats1, Stats stats2)
+    {
+        stats1.STR += stats2.STR;
+        stats1.DEX += stats2.DEX;
+        stats1.INT += stats2.INT;
+        stats1.LUK += stats2.LUK;
+        stats1.ATK += stats2.ATK;
+        stats1.DEF += stats2.DEF;
+        stats1.HPMax += stats2.HPMax;
+        stats1.MPMax += stats2.MPMax;
+
+        return stats1;
+    }
+    public static Stats operator -(Stats stats1, Stats stats2)
+    {
+        stats1.STR -= stats2.STR;
+        stats1.DEX -= stats2.DEX;
+        stats1.INT -= stats2.INT;
+        stats1.LUK -= stats2.LUK;
+        stats1.ATK -= stats2.ATK;
+        stats1.DEF -= stats2.DEF;
+        stats1.HPMax -= stats2.HPMax;
+        stats1.MPMax -= stats2.MPMax;
+
+        return stats1;
+    }
 }
 
 

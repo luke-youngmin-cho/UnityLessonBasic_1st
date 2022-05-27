@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryView : MonoBehaviour
 {
     public static InventoryView instance;
-    public static bool isReady;
+    public CMDState CMDState;
 
     [SerializeField] private InventoryItemsView itemsView_Equip;
     [SerializeField] private InventoryItemsView itemsView_Spend;
@@ -13,14 +13,28 @@ public class InventoryView : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null)
+            Destroy(instance);
         instance = this;
+
+        StartCoroutine(E_Init());
     }
 
-    private void Start()
+    IEnumerator E_Init()
     {
         itemsView_Equip.gameObject.SetActive(true);
+        itemsView_Spend.gameObject.SetActive(true);
+        itemsView_ETC.gameObject.SetActive(true);
+
+        yield return new WaitUntil(() => itemsView_Equip.CMDState == CMDState.Ready &&
+                                         itemsView_Spend.CMDState == CMDState.Ready &&
+                                         itemsView_ETC.CMDState == CMDState.Ready);
+
         itemsView_Spend.gameObject.SetActive(false);
         itemsView_ETC.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+
+        CMDState = CMDState.Ready;
     }
 
     /// <summary>
@@ -29,9 +43,9 @@ public class InventoryView : MonoBehaviour
     /// <param name="data"></param>
     public void SetUp(List<InventoryItemData> itemsData)
     {
-        foreach (InventoryItemData item in itemsData)
+        for (int i = 0; i < itemsData.Count; i++)
         {
-            GameObject prefab = ItemAssets.GetItemPrefab(item.itemName); // 아이템 에셋 가져옴
+            GameObject prefab = ItemAssets.GetItemPrefab(itemsData[i].itemName); // 아이템 에셋 가져옴
             ItemController controller = prefab.GetComponent<ItemController>(); // 아이템 에셋의 Controller 컴포넌트
             IUseable useable = controller as IUseable; // 아이템 에셋에 사용가능한 인터페이스 있으면 가져옴
             InventorySlot.OnUse onUse = null;
@@ -40,12 +54,26 @@ public class InventoryView : MonoBehaviour
                 onUse = useable.Use;
 
             // 해당 아이템타입에 맞는 인벤토리에 아이템을 추가함.
-            GetItemsView(item.type).AddItem(controller.item,
-                                            item.num,
+            GetItemsView(itemsData[i].type).AddItem(controller.item,
+                                            itemsData[i].num,
                                             onUse);
         }
 
-        isReady = true;
+        //foreach (InventoryItemData item in itemsData)
+        //{
+        //    GameObject prefab = ItemAssets.GetItemPrefab(item.itemName); // 아이템 에셋 가져옴
+        //    ItemController controller = prefab.GetComponent<ItemController>(); // 아이템 에셋의 Controller 컴포넌트
+        //    IUseable useable = controller as IUseable; // 아이템 에셋에 사용가능한 인터페이스 있으면 가져옴
+        //    InventorySlot.OnUse onUse = null;
+        //    // 사용가능한 아이템이면 사용하는 이벤트함수 대리자로 전달 
+        //    if (useable != null)
+        //        onUse = useable.Use;
+        //
+        //    // 해당 아이템타입에 맞는 인벤토리에 아이템을 추가함.
+        //    GetItemsView(item.type).AddItem(controller.item,
+        //                                    item.num,
+        //                                    onUse);
+        //}
     }
 
     public InventoryItemsView GetItemsView(ItemType itemType)

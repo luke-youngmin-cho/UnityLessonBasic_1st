@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class StatsView : MonoBehaviour
 {
     public static StatsView instance;
+    public CMDState CMDState;
+
     [SerializeField] private Text LVText;
     [SerializeField] private Text EXPText;
     [SerializeField] private Text STRText;
@@ -47,6 +49,7 @@ public class StatsView : MonoBehaviour
             Destroy(instance);
         instance = this;
         gameObject.SetActive(false);
+        CMDState = CMDState.Ready;
     }
 
     private void OnEnable()
