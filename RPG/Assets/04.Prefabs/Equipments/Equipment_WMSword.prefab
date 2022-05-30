@@ -114,6 +114,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: -8289309208351940709, guid: 1b5ead3c0f035fd42b4b0e712ccd72bf,
     type: 3}
+  additionalStats:
+    LV: 0
+    EXP: 0
+    STR: 10
+    DEX: 0
+    INT: 0
+    LUK: 0
+    HP: 0
+    MP: 0
+    ATK: 0
+    DEF: 0
+    HPMax: 0
+    MPMax: 0
+    statPoint: 0
   targetLayer:
     serializedVersion: 2
     m_Bits: 8388608

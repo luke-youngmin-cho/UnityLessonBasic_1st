@@ -33,7 +33,7 @@ public class InventorySlot : MonoBehaviour , IPointerDownHandler
             {
                 _num = value;
 
-                if (StageManager.state != StageState.SetUpPlayer)
+                if (StageManager.state > StageState.WaitForUISetUp)
                 {
                     InventoryDataManager.data.SetItemData(_item.type, _item.name, _num, id);
                     InventoryDataManager.SaveData();

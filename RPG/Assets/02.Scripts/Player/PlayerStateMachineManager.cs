@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStateMachineManager : MonoBehaviour
 {
     public PlayerState playerState;
+    public bool controllable = true;
 
     private Transform cam;
     private Transform tr;
@@ -33,7 +34,9 @@ public class PlayerStateMachineManager : MonoBehaviour
 
     private void Update()
     {
-        if (cam != null)
+        if (cam == null) return;
+
+        if (controllable == false) return;
 
         // movement
         if (playerState == PlayerState.Move ||
@@ -75,6 +78,8 @@ public class PlayerStateMachineManager : MonoBehaviour
 
     public void ChangePlayerState(PlayerState newState)
     {
+        if (controllable == false) return;
+
         if (playerState == newState) return;
 
         // 바꾸려는 머신 검색
