@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     {
         set
         {
+            if (instance == null) return;
+
             _CMDState = value;
             switch (_CMDState)
             {
@@ -189,7 +191,16 @@ public class Player : MonoBehaviour
     public Ring ring;
     public Necklace necklace;
 
+    [Header("·¹ÀÌ¾î")]
+    [SerializeField] private LayerMask NPCLayer;
+
+    private NPC interactableNPC;
+
     private PlayerStateMachineManager _machineManager;
+    private CharacterController _controller;
+    //=======================================================================================
+    //******************************* Public Methods ****************************************
+    //=======================================================================================
 
     public void SetUp(PlayerData data)
     {
@@ -335,15 +346,48 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    //=======================================================================================
+    //******************************* Private Methods ***************************************
+    //=======================================================================================
 
     private void Awake()
     {
         instance = this;
-
-
         // get equipments
         weapon1 = GetComponentInChildren<Weapon1>();
         _machineManager = GetComponent<PlayerStateMachineManager>();
+        _controller = GetComponent<CharacterController>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && 
+            interactableNPC != null &&
+            interactableNPC.CMDState == CMDState.Ready)
+        {
+            interactableNPC.StartTalk();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        RaycastHit NPCHit;
+
+        if (Physics.Raycast(transform.position + Vector3.up * _controller.height / 2, transform.TransformDirection(Vector3.forward), out NPCHit, 1f, NPCLayer))
+        {
+            Debug.DrawRay(transform.position + Vector3.up * _controller.height / 2, transform.TransformDirection(Vector3.forward) * NPCHit.distance, Color.green);
+
+            if (interactableNPC == null)
+                interactableNPC = NPCHit.collider.GetComponent<NPC>();
+        }
+        else
+        {
+            Debug.DrawRay(transform.position + Vector3.up * _controller.height / 2, transform.TransformDirection(Vector3.forward) * 1f, Color.red);
+
+            if (interactableNPC != null)
+                interactableNPC = null;
+        }
+
     }
 
     private float GetEXPRequired(int level)

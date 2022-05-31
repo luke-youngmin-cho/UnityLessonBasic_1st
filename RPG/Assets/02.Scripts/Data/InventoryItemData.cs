@@ -4,6 +4,7 @@
 [System.Serializable]
 public class InventoryItemData
 {
+    public string key;
     public ItemType type; // (장비, 소비, 기타)
     public string itemName; // 이름
     public int num; // 보유 갯수

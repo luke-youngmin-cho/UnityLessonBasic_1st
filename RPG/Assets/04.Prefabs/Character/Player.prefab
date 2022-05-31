@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerState: 0
+  controllable: 1
 --- !u!114 &5168165226473955318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,20 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544f8cdf07d5aec489f10739a35b16e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats:
-    LV: 0
-    EXP: 0
-    STR: 0
-    DEX: 0
-    INT: 0
-    LUK: 0
-    HP: 0
-    HPMax: 0
-    MP: 0
-    MPMax: 0
-    ATK: 0
-    DEF: 0
-    statPoint: 0
   hpMax: 1000
   mpMax: 100
   headPoint: {fileID: 8695400170862235360}
@@ -158,6 +145,9 @@ MonoBehaviour:
   rightFoot: {fileID: 0}
   ring: {fileID: 0}
   necklace: {fileID: 0}
+  NPCLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &3733788902641039904
 MonoBehaviour:
   m_ObjectHideFlags: 0

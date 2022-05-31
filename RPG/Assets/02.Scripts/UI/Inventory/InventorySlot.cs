@@ -35,7 +35,9 @@ public class InventorySlot : MonoBehaviour , IPointerDownHandler
 
                 if (StageManager.state > StageState.WaitForUISetUp)
                 {
-                    InventoryDataManager.data.SetItemData(_item.type, _item.name, _num, id);
+                    item = new Item(_item, ItemKeyCreator.CreateKey(_item, _num));
+
+                    InventoryDataManager.data.SetItemData(_item, _num, id);
                     InventoryDataManager.SaveData();
                 }
 

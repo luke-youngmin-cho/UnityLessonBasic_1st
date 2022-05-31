@@ -41,7 +41,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerDownHandler
         if (_item != null)
         {
             item = _item;
-            InventoryDataManager.data.SetEquipmentItemData(equipmentType, _item.name);
+            InventoryDataManager.data.SetEquipmentItemData(_item, equipmentType);
             InventoryDataManager.SaveData();
         }
         else

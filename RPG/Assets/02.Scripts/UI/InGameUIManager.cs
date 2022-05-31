@@ -5,11 +5,29 @@ using UnityEngine;
 public class InGameUIManager : MonoBehaviour
 {
     public static InGameUIManager instance;
+    
     public CMDState CMDState;
     [SerializeField] private GameObject statsView;
     [SerializeField] private GameObject inventoryView;
     [SerializeField] private GameObject equipmentView;
     [SerializeField] private GameObject talkBox;
+    [SerializeField] private GameObject reinforceView;
+
+    public int GetActiveUICount()
+    {
+        int count = 0;
+        if (statsView.activeSelf)
+            count++;
+        if (inventoryView.activeSelf)
+            count++;
+        if (equipmentView.activeSelf)
+            count++;
+        if (talkBox.activeSelf)
+            count++;
+        if (reinforceView.activeSelf)
+            count++;
+        return count;
+    }
 
     private void Awake()
     {

@@ -11,6 +11,31 @@ public class CursorHandler : MonoBehaviour
     private PointerEventData _pointerEventData; // 마우스 이벤트 데이터 
     private EventSystem _eventSystem; // 이벤트를 처리하는 객체
 
+    public static void HideCursor()
+    {
+        if (Cursor.visible)
+            Cursor.visible = false;
+
+        if (Cursor.lockState != CursorLockMode.Locked)
+            Cursor.lockState = CursorLockMode.Locked;
+
+        if (Player.instance != null)
+            Player.CMDState = CMDState.Ready;
+    }
+
+    public static void ShowCursor()
+    {
+        if (Cursor.visible == false)
+            Cursor.visible = true;
+
+        if (Cursor.lockState != CursorLockMode.Confined)
+            Cursor.lockState = CursorLockMode.Confined;
+
+        if (Player.instance != null)
+            Player.CMDState = CMDState.Busy;
+    }
+
+
     private void Awake()
     {
         _graphicRaycaster = GetComponent<GraphicRaycaster>();
@@ -47,23 +72,5 @@ public class CursorHandler : MonoBehaviour
         }
     }
 
-
-    private void HideCursor()
-    {
-        if (Cursor.visible)
-            Cursor.visible = false;
-
-        if (Cursor.lockState != CursorLockMode.Locked)
-            Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    private void ShowCursor()
-    {
-        if (Cursor.visible == false)
-            Cursor.visible = true;
-
-        if (Cursor.lockState != CursorLockMode.Confined)
-            Cursor.lockState = CursorLockMode.Confined;
-    }
 
 }

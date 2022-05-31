@@ -27,9 +27,9 @@ public class InventoryData
     /// <param name="itemName"> 아이템 이름 </param>
     /// <param name="num"> 보유 갯수 </param>
     /// <param name="slotID"> 해당 아이템이 존재한 인벤토리 슬롯 </param>
-    public void SetItemData(ItemType type, string itemName, int num, int slotID)
+    public void SetItemData(Item item, int num, int slotID)
     {
-        InventoryItemData oldData = items.Find(x => x.type == type && x.slotID == slotID); // 이미 해당 슬롯에 아이템이 존재하는지 
+        InventoryItemData oldData = items.Find(x => x.type == item.type && x.slotID == slotID); // 이미 해당 슬롯에 아이템이 존재하는지 
         
         // 이미 해당 슬롯에 아이템 데이터가 존재하면 삭제
         if (oldData != null)
@@ -38,8 +38,9 @@ public class InventoryData
         // 인자들로 아이템 데이터 추가
         items.Add(new InventoryItemData()
         {
-            type = type,
-            itemName = itemName,
+            key = item.key,
+            type = item.type,
+            itemName = item.name,
             num = num,
             slotID = slotID
         });
@@ -66,21 +67,22 @@ public class InventoryData
     /// </summary>
     /// <param name="type"> 장비 종류 </param>
     /// <param name="itemName"> 장비 아이템 이름 </param>
-    public void SetEquipmentItemData(EquipmentType type, string itemName)
+    public void SetEquipmentItemData(Item item, EquipmentType type)
     {
         EquipmentItemData tmpData = equipItems.Find(x => x.type == type);
 
         if (tmpData != null)
         {
             tmpData.type = type;
-            tmpData.itemName = itemName;
+            tmpData.itemName = item.name;
         }
         else
         {
             tmpData = new EquipmentItemData()
             {
+                key = item.key,
                 type = type,
-                itemName = itemName
+                itemName = item.name
             };
             equipItems.Add(tmpData);
         }
