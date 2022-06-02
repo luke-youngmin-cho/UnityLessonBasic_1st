@@ -90,6 +90,7 @@ public class PlayerStateMachine_Attack : PlayerStateMachine
                 comboTimer -= Time.deltaTime;
                 break;
             case State.Finish:
+                
                 nextState = PlayerState.Move;
                 break;
             default:
